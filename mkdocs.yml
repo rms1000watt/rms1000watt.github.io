@@ -1,0 +1,11 @@
+site_name: rms1000watt
+pages:
+  - Home: index.md
+  - Golang: golang.md
+  - Reactjs: reactjs.md
+  - Python: python.md
+  - HTML: html.md
+  - Security: security.md
+  - Serverless: serverless.md
+  - DevOps: devops.md
+  - About: about.md

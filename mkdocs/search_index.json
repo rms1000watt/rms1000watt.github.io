@@ -1,0 +1,129 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to My Docs\n\n\nThis is where I'm putting all my references that I want to share and not forget.\n\n\n\n\nGolang\n\n\nReactJS\n\n\nPython\n\n\nHTML\n\n\nSecurity\n\n\nServerless\n\n\nDevOps\n\n\nAbout", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-my-docs", 
+            "text": "This is where I'm putting all my references that I want to share and not forget.   Golang  ReactJS  Python  HTML  Security  Serverless  DevOps  About", 
+            "title": "Welcome to My Docs"
+        }, 
+        {
+            "location": "/golang/", 
+            "text": "Golang", 
+            "title": "Golang"
+        }, 
+        {
+            "location": "/golang/#golang", 
+            "text": "", 
+            "title": "Golang"
+        }, 
+        {
+            "location": "/reactjs/", 
+            "text": "ReactJS", 
+            "title": "Reactjs"
+        }, 
+        {
+            "location": "/reactjs/#reactjs", 
+            "text": "", 
+            "title": "ReactJS"
+        }, 
+        {
+            "location": "/python/", 
+            "text": "Python", 
+            "title": "Python"
+        }, 
+        {
+            "location": "/python/#python", 
+            "text": "", 
+            "title": "Python"
+        }, 
+        {
+            "location": "/html/", 
+            "text": "HTML\n\n\nTemplates\n\n\n\n\nHTML5 Up\n\n\n\n\nGenerators\n\n\n\n\nMkDocs\n\n\n\n\nAssets\n\n\n\n\nUnsplash", 
+            "title": "HTML"
+        }, 
+        {
+            "location": "/html/#html", 
+            "text": "", 
+            "title": "HTML"
+        }, 
+        {
+            "location": "/html/#templates", 
+            "text": "HTML5 Up", 
+            "title": "Templates"
+        }, 
+        {
+            "location": "/html/#generators", 
+            "text": "MkDocs", 
+            "title": "Generators"
+        }, 
+        {
+            "location": "/html/#assets", 
+            "text": "Unsplash", 
+            "title": "Assets"
+        }, 
+        {
+            "location": "/security/", 
+            "text": "Security\n\n\nArticles\n\n\nSoftware\n\n\n\n\nTestSSL", 
+            "title": "Security"
+        }, 
+        {
+            "location": "/security/#security", 
+            "text": "", 
+            "title": "Security"
+        }, 
+        {
+            "location": "/security/#articles", 
+            "text": "", 
+            "title": "Articles"
+        }, 
+        {
+            "location": "/security/#software", 
+            "text": "TestSSL", 
+            "title": "Software"
+        }, 
+        {
+            "location": "/serverless/", 
+            "text": "Serverless", 
+            "title": "Serverless"
+        }, 
+        {
+            "location": "/serverless/#serverless", 
+            "text": "", 
+            "title": "Serverless"
+        }, 
+        {
+            "location": "/devops/", 
+            "text": "DevOps", 
+            "title": "DevOps"
+        }, 
+        {
+            "location": "/devops/#devops", 
+            "text": "", 
+            "title": "DevOps"
+        }, 
+        {
+            "location": "/about/", 
+            "text": "About\n\n\nMe\n\n\n\n\nLinkedIn\n\n\nGithub\n\n\nGist\n\n\n\n\nTODO\n\n\n\n\n[] Blog on Medium", 
+            "title": "About"
+        }, 
+        {
+            "location": "/about/#about", 
+            "text": "", 
+            "title": "About"
+        }, 
+        {
+            "location": "/about/#me", 
+            "text": "LinkedIn  Github  Gist", 
+            "title": "Me"
+        }, 
+        {
+            "location": "/about/#todo", 
+            "text": "[] Blog on Medium", 
+            "title": "TODO"
+        }
+    ]
+}
