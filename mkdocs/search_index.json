@@ -11,99 +11,119 @@
             "title": "Welcome to My Docs"
         }, 
         {
-            "location": "/golang/", 
+            "location": "/dev/golang/", 
             "text": "Golang", 
             "title": "Golang"
         }, 
         {
-            "location": "/golang/#golang", 
+            "location": "/dev/golang/#golang", 
             "text": "", 
             "title": "Golang"
         }, 
         {
-            "location": "/reactjs/", 
+            "location": "/dev/reactjs/", 
             "text": "ReactJS", 
             "title": "Reactjs"
         }, 
         {
-            "location": "/reactjs/#reactjs", 
+            "location": "/dev/reactjs/#reactjs", 
             "text": "", 
             "title": "ReactJS"
         }, 
         {
-            "location": "/python/", 
+            "location": "/dev/python/", 
             "text": "Python", 
             "title": "Python"
         }, 
         {
-            "location": "/python/#python", 
+            "location": "/dev/python/#python", 
             "text": "", 
             "title": "Python"
         }, 
         {
-            "location": "/html/", 
+            "location": "/dev/html/", 
             "text": "HTML\n\n\nTemplates\n\n\n\n\nHTML5 Up\n\n\n\n\nGenerators\n\n\n\n\nMkDocs\n\n\n\n\nAssets\n\n\n\n\nUnsplash", 
             "title": "HTML"
         }, 
         {
-            "location": "/html/#html", 
+            "location": "/dev/html/#html", 
             "text": "", 
             "title": "HTML"
         }, 
         {
-            "location": "/html/#templates", 
+            "location": "/dev/html/#templates", 
             "text": "HTML5 Up", 
             "title": "Templates"
         }, 
         {
-            "location": "/html/#generators", 
+            "location": "/dev/html/#generators", 
             "text": "MkDocs", 
             "title": "Generators"
         }, 
         {
-            "location": "/html/#assets", 
+            "location": "/dev/html/#assets", 
             "text": "Unsplash", 
             "title": "Assets"
         }, 
         {
-            "location": "/security/", 
-            "text": "Security\n\n\nArticles\n\n\nSoftware\n\n\n\n\nTestSSL", 
-            "title": "Security"
+            "location": "/devops/kubernetes/", 
+            "text": "Kubernetes", 
+            "title": "Kubernetes"
         }, 
         {
-            "location": "/security/#security", 
+            "location": "/devops/kubernetes/#kubernetes", 
             "text": "", 
-            "title": "Security"
+            "title": "Kubernetes"
         }, 
         {
-            "location": "/security/#articles", 
-            "text": "", 
-            "title": "Articles"
-        }, 
-        {
-            "location": "/security/#software", 
-            "text": "TestSSL", 
-            "title": "Software"
-        }, 
-        {
-            "location": "/serverless/", 
+            "location": "/devops/serverless/", 
             "text": "Serverless", 
             "title": "Serverless"
         }, 
         {
-            "location": "/serverless/#serverless", 
+            "location": "/devops/serverless/#serverless", 
             "text": "", 
             "title": "Serverless"
         }, 
         {
-            "location": "/devops/", 
-            "text": "DevOps", 
-            "title": "DevOps"
+            "location": "/devops/aws/", 
+            "text": "AWS", 
+            "title": "AWS"
         }, 
         {
-            "location": "/devops/#devops", 
+            "location": "/devops/aws/#aws", 
             "text": "", 
-            "title": "DevOps"
+            "title": "AWS"
+        }, 
+        {
+            "location": "/hack/security/", 
+            "text": "Security\n\n\nArticles\n\n\nSoftware\n\n\n\n\nTestSSL", 
+            "title": "Security"
+        }, 
+        {
+            "location": "/hack/security/#security", 
+            "text": "", 
+            "title": "Security"
+        }, 
+        {
+            "location": "/hack/security/#articles", 
+            "text": "", 
+            "title": "Articles"
+        }, 
+        {
+            "location": "/hack/security/#software", 
+            "text": "TestSSL", 
+            "title": "Software"
+        }, 
+        {
+            "location": "/hack/raspberrypi/", 
+            "text": "Raspberry Pi", 
+            "title": "Raspberry Pi"
+        }, 
+        {
+            "location": "/hack/raspberrypi/#raspberry-pi", 
+            "text": "", 
+            "title": "Raspberry Pi"
         }, 
         {
             "location": "/about/", 

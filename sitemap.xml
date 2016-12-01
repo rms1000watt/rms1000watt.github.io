@@ -10,59 +10,69 @@
     
 
     
+        
     <url>
-     <loc>/golang/</loc>
+     <loc>/dev/golang/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/dev/reactjs/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/dev/python/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/dev/html/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
     <url>
-     <loc>/reactjs/</loc>
+     <loc>/devops/kubernetes/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/devops/serverless/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/devops/aws/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
     <url>
-     <loc>/python/</loc>
+     <loc>/hack/security/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>/html/</loc>
+     <loc>/hack/raspberrypi/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-    <url>
-     <loc>/security/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/serverless/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/devops/</loc>
-     <lastmod>2016-12-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
+        
     
 
     

@@ -1,11 +1,16 @@
 site_name: rms1000watt
 pages:
   - Home: index.md
-  - Golang: golang.md
-  - Reactjs: reactjs.md
-  - Python: python.md
-  - HTML: html.md
-  - Security: security.md
-  - Serverless: serverless.md
-  - DevOps: devops.md
+  - Dev:
+    - Golang: dev/golang.md
+    - Reactjs: dev/reactjs.md
+    - Python: dev/python.md
+    - HTML: dev/html.md
+  - DevOps: 
+    - Kubernetes: devops/kubernetes.md
+    - Serverless: devops/serverless.md
+    - AWS: devops/aws.md
+  - Hack: 
+    - Security: hack/security.md
+    - Raspberry Pi: hack/raspberrypi.md
   - About: about.md
