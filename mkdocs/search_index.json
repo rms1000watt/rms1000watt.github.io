@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to My Docs\n\n\nThis is where I'm putting all my references that I want to share and not forget.\n\n\n\n\nGolang\n\n\nReactJS\n\n\nPython\n\n\nHTML\n\n\nSecurity\n\n\nServerless\n\n\nDevOps\n\n\nAbout", 
+            "text": "rms1000watt Tech\n\n\nThis is where I'm putting all my references that I want to share and not forget.", 
             "title": "Home"
         }, 
         {
-            "location": "/#welcome-to-my-docs", 
-            "text": "This is where I'm putting all my references that I want to share and not forget.   Golang  ReactJS  Python  HTML  Security  Serverless  DevOps  About", 
-            "title": "Welcome to My Docs"
+            "location": "/#rms1000watt-tech", 
+            "text": "This is where I'm putting all my references that I want to share and not forget.", 
+            "title": "rms1000watt Tech"
         }, 
         {
             "location": "/dev/golang/", 
@@ -66,6 +66,36 @@
             "title": "Assets"
         }, 
         {
+            "location": "/dev/serialization/", 
+            "text": "Serialization\n\n\nYAML\n\n\n\n\nhttp://www.yaml.org/start.html\n\n\n\n\nProtobuf\n\n\n\n\nhttps://developers.google.com/protocol-buffers/\n\n\n\n\nFlatbuf\n\n\n\n\nhttps://google.github.io/flatbuffers/\n\n\n\n\nJSON\n\n\n\n\nhttp://www.json.org/", 
+            "title": "Serialization"
+        }, 
+        {
+            "location": "/dev/serialization/#serialization", 
+            "text": "", 
+            "title": "Serialization"
+        }, 
+        {
+            "location": "/dev/serialization/#yaml", 
+            "text": "http://www.yaml.org/start.html", 
+            "title": "YAML"
+        }, 
+        {
+            "location": "/dev/serialization/#protobuf", 
+            "text": "https://developers.google.com/protocol-buffers/", 
+            "title": "Protobuf"
+        }, 
+        {
+            "location": "/dev/serialization/#flatbuf", 
+            "text": "https://google.github.io/flatbuffers/", 
+            "title": "Flatbuf"
+        }, 
+        {
+            "location": "/dev/serialization/#json", 
+            "text": "http://www.json.org/", 
+            "title": "JSON"
+        }, 
+        {
             "location": "/devops/kubernetes/", 
             "text": "Kubernetes", 
             "title": "Kubernetes"
@@ -97,7 +127,7 @@
         }, 
         {
             "location": "/hack/security/", 
-            "text": "Security\n\n\nArticles\n\n\nSoftware\n\n\n\n\nTestSSL", 
+            "text": "Security\n\n\nArticles\n\n\n\n\nNK Malware Decompiling/Analysis\n\n\n\n\nBlogs\n\n\n\n\nCode and Sec\n\n\n\n\nSoftware\n\n\n\n\nTestSSL\n\n\n\n\nServices\n\n\n\n\nVPN Private Internet Access", 
             "title": "Security"
         }, 
         {
@@ -107,13 +137,23 @@
         }, 
         {
             "location": "/hack/security/#articles", 
-            "text": "", 
+            "text": "NK Malware Decompiling/Analysis", 
             "title": "Articles"
+        }, 
+        {
+            "location": "/hack/security/#blogs", 
+            "text": "Code and Sec", 
+            "title": "Blogs"
         }, 
         {
             "location": "/hack/security/#software", 
             "text": "TestSSL", 
             "title": "Software"
+        }, 
+        {
+            "location": "/hack/security/#services", 
+            "text": "VPN Private Internet Access", 
+            "title": "Services"
         }, 
         {
             "location": "/hack/raspberrypi/", 

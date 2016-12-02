@@ -6,6 +6,7 @@ pages:
     - Reactjs: dev/reactjs.md
     - Python: dev/python.md
     - HTML: dev/html.md
+    - Serialization: dev/serialization.md
   - DevOps: 
     - Kubernetes: devops/kubernetes.md
     - Serverless: devops/serverless.md

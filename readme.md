@@ -1,5 +1,5 @@
 <hidden cmd="mkdocs build && cp -R site/* . && rm -rf site"/>
-<hidden cmd="git push https://rms1000watt@github.com/rms1000watt/rms1000watt.github.io.git master:master"/>
+<hidden cmd="git add . && git commit -m "Added links" && git push https://rms1000watt@github.com/rms1000watt/rms1000watt.github.io.git master:master"/>
 
 ## rms1000watt
 
