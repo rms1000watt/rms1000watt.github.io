@@ -8,12 +8,12 @@ Useful references across Software, IT, DevOps, and Security.
 
 ### [ReactJS](/dev/reactjs)
 
-### [Python] (/dev/python)
+### [Python](/dev/python)
 
 - [Concurrency](/dev/python/#concurrency)
 - [Servers](/dev/python/#servers)
 
-### [HTML] (/dev/html)
+### [HTML](/dev/html)
 
 - [Templates](/dev/html/#templates)
 - [Generators](/dev/html/#generators)
