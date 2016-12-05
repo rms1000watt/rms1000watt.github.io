@@ -2,13 +2,83 @@
     "docs": [
         {
             "location": "/", 
-            "text": "rms1000watt Tech\n\n\nThis is where I'm putting all my references that I want to share and not forget.", 
+            "text": "Tech Tech Tech\n\n\nUseful references across Software, IT, DevOps, and Security.\n\n\nDev\n\n\nGolang\n\n\nReactJS\n\n\n[Python] (/dev/python)\n\n\n\n\nConcurrency\n\n\nServers\n\n\n\n\n[HTML] (/dev/html)\n\n\n\n\nTemplates\n\n\nGenerators\n\n\nAssets\n\n\nCSS\n\n\n\n\nSerialization\n\n\n\n\nYAML\n\n\nProtobuf\n\n\nFlatbuf\n\n\nJSON\n\n\n\n\nDevOps\n\n\nKubernetes\n\n\nServerless\n\n\nAWS\n\n\n\n\nSAM\n\n\n\n\nHack\n\n\nSBCs\n\n\n\n\nRaspberryPi\n\n\nCHIP\n\n\n\n\nSecurity\n\n\n\n\nArticles\n\n\nBlogs\n\n\nSoftware\n\n\nServices\n\n\n\n\nAbout", 
             "title": "Home"
         }, 
         {
-            "location": "/#rms1000watt-tech", 
-            "text": "This is where I'm putting all my references that I want to share and not forget.", 
-            "title": "rms1000watt Tech"
+            "location": "/#tech-tech-tech", 
+            "text": "Useful references across Software, IT, DevOps, and Security.", 
+            "title": "Tech Tech Tech"
+        }, 
+        {
+            "location": "/#dev", 
+            "text": "", 
+            "title": "Dev"
+        }, 
+        {
+            "location": "/#golang", 
+            "text": "", 
+            "title": "Golang"
+        }, 
+        {
+            "location": "/#reactjs", 
+            "text": "", 
+            "title": "ReactJS"
+        }, 
+        {
+            "location": "/#python-devpython", 
+            "text": "Concurrency  Servers", 
+            "title": "[Python] (/dev/python)"
+        }, 
+        {
+            "location": "/#html-devhtml", 
+            "text": "Templates  Generators  Assets  CSS", 
+            "title": "[HTML] (/dev/html)"
+        }, 
+        {
+            "location": "/#serialization", 
+            "text": "YAML  Protobuf  Flatbuf  JSON", 
+            "title": "Serialization"
+        }, 
+        {
+            "location": "/#devops", 
+            "text": "", 
+            "title": "DevOps"
+        }, 
+        {
+            "location": "/#kubernetes", 
+            "text": "", 
+            "title": "Kubernetes"
+        }, 
+        {
+            "location": "/#serverless", 
+            "text": "", 
+            "title": "Serverless"
+        }, 
+        {
+            "location": "/#aws", 
+            "text": "SAM", 
+            "title": "AWS"
+        }, 
+        {
+            "location": "/#hack", 
+            "text": "", 
+            "title": "Hack"
+        }, 
+        {
+            "location": "/#sbcs", 
+            "text": "RaspberryPi  CHIP", 
+            "title": "SBCs"
+        }, 
+        {
+            "location": "/#security", 
+            "text": "Articles  Blogs  Software  Services", 
+            "title": "Security"
+        }, 
+        {
+            "location": "/#about", 
+            "text": "", 
+            "title": "About"
         }, 
         {
             "location": "/dev/golang/", 
@@ -32,7 +102,7 @@
         }, 
         {
             "location": "/dev/python/", 
-            "text": "Python", 
+            "text": "Python\n\n\nConcurrency\n\n\n\n\nMultiprocessing with Websockets\n\n\n\n\nServers\n\n\n\n\nTornado Web", 
             "title": "Python"
         }, 
         {
@@ -41,8 +111,18 @@
             "title": "Python"
         }, 
         {
+            "location": "/dev/python/#concurrency", 
+            "text": "Multiprocessing with Websockets", 
+            "title": "Concurrency"
+        }, 
+        {
+            "location": "/dev/python/#servers", 
+            "text": "Tornado Web", 
+            "title": "Servers"
+        }, 
+        {
             "location": "/dev/html/", 
-            "text": "HTML\n\n\nTemplates\n\n\n\n\nHTML5 Up\n\n\n\n\nGenerators\n\n\n\n\nMkDocs\n\n\n\n\nAssets\n\n\n\n\nUnsplash", 
+            "text": "HTML\n\n\nTemplates\n\n\n\n\nHTML5 Up\n\n\n\n\nGenerators\n\n\n\n\nMkDocs\n\n\nPhenomic\n\n\nHugo\n\n\n\n\nAssets\n\n\n\n\nUnsplash\n\n\n\n\nCSS\n\n\n\n\nFlexbox grids\n\n\nFlexbox", 
             "title": "HTML"
         }, 
         {
@@ -57,13 +137,18 @@
         }, 
         {
             "location": "/dev/html/#generators", 
-            "text": "MkDocs", 
+            "text": "MkDocs  Phenomic  Hugo", 
             "title": "Generators"
         }, 
         {
             "location": "/dev/html/#assets", 
             "text": "Unsplash", 
             "title": "Assets"
+        }, 
+        {
+            "location": "/dev/html/#css", 
+            "text": "Flexbox grids  Flexbox", 
+            "title": "CSS"
         }, 
         {
             "location": "/dev/serialization/", 
@@ -117,13 +202,18 @@
         }, 
         {
             "location": "/devops/aws/", 
-            "text": "AWS", 
+            "text": "AWS\n\n\nSAM\n\n\n\n\nExamples", 
             "title": "AWS"
         }, 
         {
             "location": "/devops/aws/#aws", 
             "text": "", 
             "title": "AWS"
+        }, 
+        {
+            "location": "/devops/aws/#sam", 
+            "text": "Examples", 
+            "title": "SAM"
         }, 
         {
             "location": "/hack/security/", 
@@ -156,14 +246,24 @@
             "title": "Services"
         }, 
         {
-            "location": "/hack/raspberrypi/", 
-            "text": "Raspberry Pi", 
+            "location": "/hack/sbcs/", 
+            "text": "Single Board Computers\n\n\nRaspberry Pi\n\n\nCHIP", 
+            "title": "SBCs"
+        }, 
+        {
+            "location": "/hack/sbcs/#single-board-computers", 
+            "text": "", 
+            "title": "Single Board Computers"
+        }, 
+        {
+            "location": "/hack/sbcs/#raspberry-pi", 
+            "text": "", 
             "title": "Raspberry Pi"
         }, 
         {
-            "location": "/hack/raspberrypi/#raspberry-pi", 
+            "location": "/hack/sbcs/#chip", 
             "text": "", 
-            "title": "Raspberry Pi"
+            "title": "CHIP"
         }, 
         {
             "location": "/about/", 

@@ -13,5 +13,5 @@ pages:
     - AWS: devops/aws.md
   - Hack: 
     - Security: hack/security.md
-    - Raspberry Pi: hack/raspberrypi.md
+    - SBCs: hack/sbcs.md
   - About: about.md
