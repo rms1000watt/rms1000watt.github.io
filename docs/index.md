@@ -6,6 +6,10 @@ Useful references across Software, IT, DevOps, and Security.
 
 ### [Golang](/dev/golang)
 
+- [Articles](/dev/golang/#articles)
+- [Tutorials](/dev/golang/#tutorials)
+- [AwesomeGo](/dev/golang/#awesomego)
+
 ### [ReactJS](/dev/reactjs)
 
 ### [Python](/dev/python)
