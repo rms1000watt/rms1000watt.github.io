@@ -43,10 +43,11 @@ Useful references across Software, IT, DevOps, and Security.
 
 ## [Hack](/hack)
 
-### [SBCs](/hack/sbcs)
+### [Hardware](/hack/hardware)
 
-- [RaspberryPi](/hack/sbcs/#raspberrypi)
-- [CHIP](/hack/sbcs/#chip)
+- [RaspberryPi](/hack/hardware/#raspberrypi)
+- [CHIP](/hack/hardware/#chip)
+- [ThirdParty](/hack/hardware/#thirdparty)
 
 ### [Security](/hack/security)
 

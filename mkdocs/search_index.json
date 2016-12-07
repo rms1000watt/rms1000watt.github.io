@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Tech Tech Tech\n\n\nUseful references across Software, IT, DevOps, and Security.\n\n\nDev\n\n\nGolang\n\n\n\n\nArticles\n\n\nTutorials\n\n\nAwesomeGo\n\n\n\n\nReactJS\n\n\nPython\n\n\n\n\nConcurrency\n\n\nServers\n\n\n\n\nHTML\n\n\n\n\nTemplates\n\n\nGenerators\n\n\nAssets\n\n\nCSS\n\n\n\n\nSerialization\n\n\n\n\nYAML\n\n\nProtobuf\n\n\nFlatbuf\n\n\nJSON\n\n\n\n\nDevOps\n\n\nKubernetes\n\n\nServerless\n\n\nAWS\n\n\n\n\nSAM\n\n\n\n\nHack\n\n\nSBCs\n\n\n\n\nRaspberryPi\n\n\nCHIP\n\n\n\n\nSecurity\n\n\n\n\nArticles\n\n\nBlogs\n\n\nSoftware\n\n\nServices\n\n\n\n\nAbout", 
+            "text": "Tech Tech Tech\n\n\nUseful references across Software, IT, DevOps, and Security.\n\n\nDev\n\n\nGolang\n\n\n\n\nArticles\n\n\nTutorials\n\n\nAwesomeGo\n\n\n\n\nReactJS\n\n\nPython\n\n\n\n\nConcurrency\n\n\nServers\n\n\n\n\nHTML\n\n\n\n\nTemplates\n\n\nGenerators\n\n\nAssets\n\n\nCSS\n\n\n\n\nSerialization\n\n\n\n\nYAML\n\n\nProtobuf\n\n\nFlatbuf\n\n\nJSON\n\n\n\n\nDevOps\n\n\nKubernetes\n\n\nServerless\n\n\nAWS\n\n\n\n\nSAM\n\n\n\n\nHack\n\n\nHardware\n\n\n\n\nRaspberryPi\n\n\nCHIP\n\n\nThirdParty\n\n\n\n\nSecurity\n\n\n\n\nArticles\n\n\nBlogs\n\n\nSoftware\n\n\nServices\n\n\n\n\nAbout", 
             "title": "Home"
         }, 
         {
@@ -66,9 +66,9 @@
             "title": "Hack"
         }, 
         {
-            "location": "/#sbcs", 
-            "text": "RaspberryPi  CHIP", 
-            "title": "SBCs"
+            "location": "/#hardware", 
+            "text": "RaspberryPi  CHIP  ThirdParty", 
+            "title": "Hardware"
         }, 
         {
             "location": "/#security", 
@@ -261,24 +261,29 @@
             "title": "Services"
         }, 
         {
-            "location": "/hack/sbcs/", 
-            "text": "Single Board Computers\n\n\nRaspberry Pi\n\n\nCHIP", 
-            "title": "SBCs"
+            "location": "/hack/hardware/", 
+            "text": "Hardware\n\n\nRaspberryPi\n\n\n\n\nPi\u00f1a Colada (WiFi Pinapple)\n\n\nPoison Tap\n\n\n\n\nCHIP\n\n\nThirdParty\n\n\n\n\nLan Turtle\n\n\nHackRF\n\n\nWifi Pineapple", 
+            "title": "Hardware"
         }, 
         {
-            "location": "/hack/sbcs/#single-board-computers", 
+            "location": "/hack/hardware/#hardware", 
             "text": "", 
-            "title": "Single Board Computers"
+            "title": "Hardware"
         }, 
         {
-            "location": "/hack/sbcs/#raspberry-pi", 
-            "text": "", 
-            "title": "Raspberry Pi"
+            "location": "/hack/hardware/#raspberrypi", 
+            "text": "Pi\u00f1a Colada (WiFi Pinapple)  Poison Tap", 
+            "title": "RaspberryPi"
         }, 
         {
-            "location": "/hack/sbcs/#chip", 
+            "location": "/hack/hardware/#chip", 
             "text": "", 
             "title": "CHIP"
+        }, 
+        {
+            "location": "/hack/hardware/#thirdparty", 
+            "text": "Lan Turtle  HackRF  Wifi Pineapple", 
+            "title": "ThirdParty"
         }, 
         {
             "location": "/about/", 

@@ -13,5 +13,5 @@ pages:
     - AWS: devops/aws.md
   - Hack: 
     - Security: hack/security.md
-    - SBCs: hack/sbcs.md
+    - Hardware: hack/hardware.md
   - About: about.md
