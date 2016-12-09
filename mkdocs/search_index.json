@@ -82,7 +82,7 @@
         }, 
         {
             "location": "/dev/golang/", 
-            "text": "Golang\n\n\nArticles\n\n\n\n\nGo with Docker from Scratch\n\n\n\n\nTutorials\n\n\n\n\nGo By Example\n\n\nTour of Go\n\n\nDave Cheney's Guide\n\n\n\n\nAwesomeGo\n\n\n\n\nAwesome Go", 
+            "text": "Golang\n\n\nArticles\n\n\n\n\nGo with Docker from Scratch\n\n\n\n\nTutorials\n\n\n\n\nGo By Example\n\n\nTour of Go\n\n\nDave Cheney's Guide\n\n\n\n\nAwesomeGo\n\n\n\n\nAwesome Go\n\n\nGoVendor", 
             "title": "Golang"
         }, 
         {
@@ -102,7 +102,7 @@
         }, 
         {
             "location": "/dev/golang/#awesomego", 
-            "text": "Awesome Go", 
+            "text": "Awesome Go  GoVendor", 
             "title": "AwesomeGo"
         }, 
         {

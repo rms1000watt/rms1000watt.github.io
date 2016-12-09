@@ -13,3 +13,4 @@
 ## AwesomeGo
 
 - [Awesome Go](http://awesome-go.com/)
+- [GoVendor](https://github.com/kardianos/govendor)
