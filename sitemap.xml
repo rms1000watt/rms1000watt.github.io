@@ -46,6 +46,12 @@
     
         
     <url>
+     <loc>/devops/docker/</loc>
+     <lastmod>2016-12-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/devops/kubernetes/</loc>
      <lastmod>2016-12-09</lastmod>
      <changefreq>daily</changefreq>

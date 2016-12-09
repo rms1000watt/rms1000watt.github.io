@@ -7,7 +7,8 @@ pages:
     - Python: dev/python.md
     - HTML: dev/html.md
     - Serialization: dev/serialization.md
-  - DevOps: 
+  - DevOps:
+    - Docker: devops/docker.md 
     - Kubernetes: devops/kubernetes.md
     - Serverless: devops/serverless.md
     - AWS: devops/aws.md
