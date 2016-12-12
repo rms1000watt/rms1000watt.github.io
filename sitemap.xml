@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,31 +13,31 @@
         
     <url>
      <loc>/dev/golang/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/dev/reactjs/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/dev/python/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/dev/html/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/dev/serialization/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -47,25 +47,25 @@
         
     <url>
      <loc>/devops/docker/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/devops/kubernetes/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/devops/serverless/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/devops/aws/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -75,13 +75,13 @@
         
     <url>
      <loc>/hack/security/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/hack/hardware/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -90,7 +90,7 @@
     
     <url>
      <loc>/about/</loc>
-     <lastmod>2016-12-09</lastmod>
+     <lastmod>2016-12-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

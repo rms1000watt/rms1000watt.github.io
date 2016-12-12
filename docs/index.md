@@ -59,6 +59,7 @@ Useful references across Software, IT, DevOps, and Security.
 - [Blogs](/hack/security/#blogs)
 - [Software](/hack/security/#software)
 - [Services](/hack/security/#services)
+- [Videos](/hack/security/#videos)
 
 ## [About](/about)
 

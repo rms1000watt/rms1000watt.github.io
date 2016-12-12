@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Tech Tech Tech\n\n\nUseful references across Software, IT, DevOps, and Security.\n\n\nDev\n\n\nGolang\n\n\n\n\nArticles\n\n\nTutorials\n\n\nAwesomeGo\n\n\n\n\nReactJS\n\n\n\n\nArticles\n\n\n\n\nPython\n\n\n\n\nConcurrency\n\n\nServers\n\n\n\n\nHTML\n\n\n\n\nTemplates\n\n\nGenerators\n\n\nAssets\n\n\nCSS\n\n\n\n\nSerialization\n\n\n\n\nYAML\n\n\nProtobuf\n\n\nFlatbuf\n\n\nJSON\n\n\n\n\nDevOps\n\n\nDocker\n\n\nKubernetes\n\n\nServerless\n\n\nAWS\n\n\n\n\nSAM\n\n\n\n\nHack\n\n\nHardware\n\n\n\n\nRaspberryPi\n\n\nCHIP\n\n\nThirdParty\n\n\n\n\nSecurity\n\n\n\n\nArticles\n\n\nBlogs\n\n\nSoftware\n\n\nServices\n\n\n\n\nAbout", 
+            "text": "Tech Tech Tech\n\n\nUseful references across Software, IT, DevOps, and Security.\n\n\nDev\n\n\nGolang\n\n\n\n\nArticles\n\n\nTutorials\n\n\nAwesomeGo\n\n\n\n\nReactJS\n\n\n\n\nArticles\n\n\n\n\nPython\n\n\n\n\nConcurrency\n\n\nServers\n\n\n\n\nHTML\n\n\n\n\nTemplates\n\n\nGenerators\n\n\nAssets\n\n\nCSS\n\n\n\n\nSerialization\n\n\n\n\nYAML\n\n\nProtobuf\n\n\nFlatbuf\n\n\nJSON\n\n\n\n\nDevOps\n\n\nDocker\n\n\nKubernetes\n\n\nServerless\n\n\nAWS\n\n\n\n\nSAM\n\n\n\n\nHack\n\n\nHardware\n\n\n\n\nRaspberryPi\n\n\nCHIP\n\n\nThirdParty\n\n\n\n\nSecurity\n\n\n\n\nArticles\n\n\nBlogs\n\n\nSoftware\n\n\nServices\n\n\nVideos\n\n\n\n\nAbout", 
             "title": "Home"
         }, 
         {
@@ -77,7 +77,7 @@
         }, 
         {
             "location": "/#security", 
-            "text": "Articles  Blogs  Software  Services", 
+            "text": "Articles  Blogs  Software  Services  Videos", 
             "title": "Security"
         }, 
         {
@@ -252,7 +252,7 @@
         }, 
         {
             "location": "/hack/security/", 
-            "text": "Security\n\n\nArticles\n\n\n\n\nNK Malware Decompiling/Analysis\n\n\n\n\nBlogs\n\n\n\n\nCode and Sec\n\n\n\n\nSoftware\n\n\n\n\nTestSSL\n\n\n\n\nServices\n\n\n\n\nVPN Private Internet Access", 
+            "text": "Security\n\n\nArticles\n\n\n\n\nNK Malware Decompiling/Analysis\n\n\n\n\nBlogs\n\n\n\n\nCode and Sec\n\n\n\n\nSoftware\n\n\n\n\nTestSSL\n\n\n\n\nServices\n\n\n\n\nVPN Private Internet Access\n\n\n\n\nVideos\n\n\n\n\nDefcon 21 - The Bluetooth Device Database\n\n\nDefcon 22 - Grant Bugher - Detecting Bluetooth Surveillance Systems\n\n\nDefcon 24 - Marc Newlin - MouseJack: Injecting Keystrokes into Wireless Mice", 
             "title": "Security"
         }, 
         {
@@ -279,6 +279,11 @@
             "location": "/hack/security/#services", 
             "text": "VPN Private Internet Access", 
             "title": "Services"
+        }, 
+        {
+            "location": "/hack/security/#videos", 
+            "text": "Defcon 21 - The Bluetooth Device Database  Defcon 22 - Grant Bugher - Detecting Bluetooth Surveillance Systems  Defcon 24 - Marc Newlin - MouseJack: Injecting Keystrokes into Wireless Mice", 
+            "title": "Videos"
         }, 
         {
             "location": "/hack/hardware/", 
