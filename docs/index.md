@@ -26,6 +26,10 @@ Useful references across Software, IT, DevOps, and Security.
 - [Assets](/dev/html/#assets)
 - [CSS](/dev/html/#css)
 
+### [C](/dev/c)
+
+- [Server](/dev/c/#server)
+
 ### [Serialization](/dev/serialization)
 
 - [YAML](/dev/serialization/#yaml)
@@ -40,6 +44,8 @@ Useful references across Software, IT, DevOps, and Security.
 ### [Kubernetes](/kubernetes)
 
 ### [Serverless](/serverless)
+
+### [Build](/build)
 
 ### [AWS](/aws)
 

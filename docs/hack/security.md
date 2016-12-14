@@ -11,6 +11,10 @@
 ## Software
 
 - [TestSSL](https://testssl.sh/)
+- [Security Growler](https://github.com/pirate/security-growler)
+- [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html)
+- [Ettercap (MitM)](https://ettercap.github.io/ettercap/)
+- [Heffalump (Honeypot)](https://github.com/carlmjohnson/heffalump)
 
 ## Services
 

@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Tech Tech Tech\n\n\nUseful references across Software, IT, DevOps, and Security.\n\n\nDev\n\n\nGolang\n\n\n\n\nArticles\n\n\nTutorials\n\n\nAwesomeGo\n\n\n\n\nReactJS\n\n\n\n\nArticles\n\n\n\n\nPython\n\n\n\n\nConcurrency\n\n\nServers\n\n\n\n\nHTML\n\n\n\n\nTemplates\n\n\nGenerators\n\n\nAssets\n\n\nCSS\n\n\n\n\nSerialization\n\n\n\n\nYAML\n\n\nProtobuf\n\n\nFlatbuf\n\n\nJSON\n\n\n\n\nDevOps\n\n\nDocker\n\n\nKubernetes\n\n\nServerless\n\n\nAWS\n\n\n\n\nSAM\n\n\n\n\nHack\n\n\nHardware\n\n\n\n\nRaspberryPi\n\n\nCHIP\n\n\nThirdParty\n\n\n\n\nSecurity\n\n\n\n\nArticles\n\n\nBlogs\n\n\nSoftware\n\n\nServices\n\n\nVideos\n\n\n\n\nAbout", 
+            "text": "Tech Tech Tech\n\n\nUseful references across Software, IT, DevOps, and Security.\n\n\nDev\n\n\nGolang\n\n\n\n\nArticles\n\n\nTutorials\n\n\nAwesomeGo\n\n\n\n\nReactJS\n\n\n\n\nArticles\n\n\n\n\nPython\n\n\n\n\nConcurrency\n\n\nServers\n\n\n\n\nHTML\n\n\n\n\nTemplates\n\n\nGenerators\n\n\nAssets\n\n\nCSS\n\n\n\n\nC\n\n\n\n\nServer\n\n\n\n\nSerialization\n\n\n\n\nYAML\n\n\nProtobuf\n\n\nFlatbuf\n\n\nJSON\n\n\n\n\nDevOps\n\n\nDocker\n\n\nKubernetes\n\n\nServerless\n\n\nBuild\n\n\nAWS\n\n\n\n\nSAM\n\n\n\n\nHack\n\n\nHardware\n\n\n\n\nRaspberryPi\n\n\nCHIP\n\n\nThirdParty\n\n\n\n\nSecurity\n\n\n\n\nArticles\n\n\nBlogs\n\n\nSoftware\n\n\nServices\n\n\nVideos\n\n\n\n\nAbout", 
             "title": "Home"
         }, 
         {
@@ -36,6 +36,11 @@
             "title": "HTML"
         }, 
         {
+            "location": "/#c", 
+            "text": "Server", 
+            "title": "C"
+        }, 
+        {
             "location": "/#serialization", 
             "text": "YAML  Protobuf  Flatbuf  JSON", 
             "title": "Serialization"
@@ -59,6 +64,11 @@
             "location": "/#serverless", 
             "text": "", 
             "title": "Serverless"
+        }, 
+        {
+            "location": "/#build", 
+            "text": "", 
+            "title": "Build"
         }, 
         {
             "location": "/#aws", 
@@ -176,6 +186,21 @@
             "title": "CSS"
         }, 
         {
+            "location": "/dev/c/", 
+            "text": "C\n\n\nServer\n\n\n\n\nLwan", 
+            "title": "C"
+        }, 
+        {
+            "location": "/dev/c/#c", 
+            "text": "", 
+            "title": "C"
+        }, 
+        {
+            "location": "/dev/c/#server", 
+            "text": "Lwan", 
+            "title": "Server"
+        }, 
+        {
             "location": "/dev/serialization/", 
             "text": "Serialization\n\n\nYAML\n\n\n\n\nhttp://www.yaml.org/start.html\n\n\n\n\nProtobuf\n\n\n\n\nhttps://developers.google.com/protocol-buffers/\n\n\n\n\nFlatbuf\n\n\n\n\nhttps://google.github.io/flatbuffers/\n\n\n\n\nJSON\n\n\n\n\nhttp://www.json.org/", 
             "title": "Serialization"
@@ -251,8 +276,23 @@
             "title": "SAM"
         }, 
         {
+            "location": "/devops/build/", 
+            "text": "Build\n\n\nMakefile\n\n\n\n\nmrbook tutorial", 
+            "title": "Build"
+        }, 
+        {
+            "location": "/devops/build/#build", 
+            "text": "", 
+            "title": "Build"
+        }, 
+        {
+            "location": "/devops/build/#makefile", 
+            "text": "mrbook tutorial", 
+            "title": "Makefile"
+        }, 
+        {
             "location": "/hack/security/", 
-            "text": "Security\n\n\nArticles\n\n\n\n\nNK Malware Decompiling/Analysis\n\n\n\n\nBlogs\n\n\n\n\nCode and Sec\n\n\n\n\nSoftware\n\n\n\n\nTestSSL\n\n\n\n\nServices\n\n\n\n\nVPN Private Internet Access\n\n\n\n\nVideos\n\n\n\n\nDefcon 21 - The Bluetooth Device Database\n\n\nDefcon 22 - Grant Bugher - Detecting Bluetooth Surveillance Systems\n\n\nDefcon 24 - Marc Newlin - MouseJack: Injecting Keystrokes into Wireless Mice", 
+            "text": "Security\n\n\nArticles\n\n\n\n\nNK Malware Decompiling/Analysis\n\n\n\n\nBlogs\n\n\n\n\nCode and Sec\n\n\n\n\nSoftware\n\n\n\n\nTestSSL\n\n\nSecurity Growler\n\n\nLittle Snitch\n\n\nEttercap (MitM)\n\n\nHeffalump (Honeypot)\n\n\n\n\nServices\n\n\n\n\nVPN Private Internet Access\n\n\n\n\nVideos\n\n\n\n\nDefcon 21 - The Bluetooth Device Database\n\n\nDefcon 22 - Grant Bugher - Detecting Bluetooth Surveillance Systems\n\n\nDefcon 24 - Marc Newlin - MouseJack: Injecting Keystrokes into Wireless Mice", 
             "title": "Security"
         }, 
         {
@@ -272,7 +312,7 @@
         }, 
         {
             "location": "/hack/security/#software", 
-            "text": "TestSSL", 
+            "text": "TestSSL  Security Growler  Little Snitch  Ettercap (MitM)  Heffalump (Honeypot)", 
             "title": "Software"
         }, 
         {

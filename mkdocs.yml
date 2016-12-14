@@ -6,12 +6,14 @@ pages:
     - Reactjs: dev/reactjs.md
     - Python: dev/python.md
     - HTML: dev/html.md
+    - C: dev/c.md
     - Serialization: dev/serialization.md
   - DevOps:
     - Docker: devops/docker.md 
     - Kubernetes: devops/kubernetes.md
     - Serverless: devops/serverless.md
     - AWS: devops/aws.md
+    - Build: devops/build.md
   - Hack: 
     - Security: hack/security.md
     - Hardware: hack/hardware.md
