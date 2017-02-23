@@ -4,7 +4,6 @@ baseurl = "http://rms1000watt.github.io"
 author = "Ryan Smith"
 canonifyurls = true
 theme = "black-and-light"
-publishDir = "docs"
 
 pygmentsstyle       = "bw"
 pygmentscodefences  = true
