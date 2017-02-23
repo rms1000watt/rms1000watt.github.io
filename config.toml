@@ -1,0 +1,22 @@
+languageCode = "en-us"
+title = "rms1000watt"
+baseurl = "http://rms1000watt.github.io"
+author = "Ryan Smith"
+canonifyurls = true
+theme = "black-and-light"
+
+pygmentsstyle       = "bw"
+pygmentscodefences  = true
+
+[params]
+  sitename = "rms1000watt"
+
+[[menu.main]]
+    name = "About"
+    url  = "/about"
+[[menu.main]]
+    name = "Github"
+    url  = "https://github.com/rms1000watt"
+[[menu.main]]
+    name = "Linkedin"
+    url  = "https://linkedin.com/in/ryanmatthewsmith"
