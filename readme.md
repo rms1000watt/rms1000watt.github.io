@@ -31,9 +31,7 @@ hugo
 ```
 
 <hidden cmd=`
-echo "/public/" >> .gitignore
-echo "/themes/" >> .gitignore
 git add . 
-git commit -m "Moving to Hugo (2)" 
+git commit -m "Moving to Hugo (3)" 
 git push https://rms1000watt@github.com/rms1000watt/rms1000watt.github.io.git master:master
 `/>
