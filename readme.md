@@ -32,6 +32,6 @@ hugo
 
 <hidden cmd=`
 git add . 
-git commit -m "Moving to Hugo (5)" 
+git commit -m "Moving to Hugo (6)" 
 git push https://rms1000watt@github.com/rms1000watt/rms1000watt.github.io.git master:master
 `/>
