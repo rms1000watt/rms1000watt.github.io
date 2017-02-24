@@ -31,6 +31,7 @@ hugo
 ```
 
 <hidden cmd=`
+hugo
 cd ..
 git add . 
 git commit -m "Updated" 

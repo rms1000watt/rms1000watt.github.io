@@ -16,6 +16,9 @@ pygmentscodefences  = true
     name = "About"
     url  = "/about"
 [[menu.main]]
+    name = "Gists"
+    url  = "https://gist.github.com/rms1000watt"    
+[[menu.main]]
     name = "Github"
     url  = "https://github.com/rms1000watt"
 [[menu.main]]

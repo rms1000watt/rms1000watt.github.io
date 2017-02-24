@@ -10,4 +10,6 @@ title = "About"
 
 ### Building Tech
 
-Trained in Physics and Engineering. Working as a Senior Software Engineer at [Lantern Credit](www.lanterncredit.com). Interested in Software, Hardware, IT, Data Science, Physics, IoT, Entrepreneurship, etc. (but I actually take the time to understand the fundamentals). Checkout my Linkedin for more info and contact details. Checkout my Github for my awesome projects!
+Trained in Physics and Engineering. Working as a Senior Software Engineer at [Lantern Credit](www.lanterncredit.com). Interested in Software, Hardware, IT, Data Science, Physics, IoT, etc. I'm a fantastic technical writer but not much of a creative writer, so expect this blog to be right to the point, lol. 
+
+Checkout my Linkedin for more info and contact details. Checkout my Gist & Github for my awesome snippets & projects!
