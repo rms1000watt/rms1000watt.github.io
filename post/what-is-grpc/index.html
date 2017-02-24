@@ -17,10 +17,10 @@
     <title>
       
       
-         Python to Go 
+         What is gRPC? 
       
     </title>
-    <link rel="canonical" href="http://rms1000watt.github.io/post/python-to-go/">
+    <link rel="canonical" href="http://rms1000watt.github.io/post/what-is-grpc/">
 
     <style>
   * {
@@ -398,10 +398,10 @@
 
 
 <section id=content>
-  <h1> Python to Go </h1>
+  <h1> What is gRPC? </h1>
 
   <div id=sub-header>
-    January 2017 · 1 minute read
+    February 2017 · 2 minute read
   </div>
 
   <div class="entry-content">
@@ -409,22 +409,59 @@
 
 <p><em>INCOMPLETE GUIDE</em></p>
 
-<p>Moving from Python to Go has been a successful experience.</p>
+<p><strong>TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!</strong></p>
 
-<p>Checkout my <a href="https://github.com/rms1000watt/hello-world-go-grpc">Go-gRPC</a> implmentation.</p>
+<p><a href="http://grpc.io">gRPC</a> is Google&rsquo;s &ldquo;&hellip;high performance, open-source universal RPC framework.&rdquo; Which doesn&rsquo;t really mean anything to the newcomer. To help you understand what this actually means, let&rsquo;s look at what you&rsquo;re used to already (REST API) and gRPC.</p>
 
-<h4 id="todo">TODO</h4>
+<p>What you&rsquo;re used to</p>
 
-<ul>
-<li>Add code snippets comparing Py &amp; Go</li>
-</ul>
+<pre><code>REST API = HTTP1.1 + REST + JSON
+</code></pre>
+
+<p>gRPC</p>
+
+<pre><code>gRPC = Google + RPC Framework
+gRPC = Google + (HTTP2 + Remote Procedure Call + Protobuf)
+</code></pre>
+
+<p>Going further to explain the differences between the two&hellip;</p>
+
+<h2 id="http2">HTTP2</h2>
+
+<p>HTTP2 is the generation following HTTP1.1. The big takeaway in relation to gRPC is the full duplex communication across a single connection, which is one reason why it&rsquo;s coined &ldquo;high performance.&rdquo;</p>
+
+<p>Another cool side effect of HTTP2 is it requires a TLS connection. This doesn&rsquo;t mean your connection is Always secure, it means IFF you provide a secure connection then you can use HTTP2.</p>
+
+<h2 id="remote-procedure-call">Remote Procedure Call</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Remote_procedure_call">Remote Procedure Call</a> or RPC is when &ldquo;&hellip;a computer program causes a procedure (subroutine) to execute in another address space (commonly on another computer on a shared network), which is coded as if it were a normal (local) procedure call, without the programmer explicitly coding the details for the remote interaction.&rdquo;</p>
+
+<p>WOW! Groundbreaking!</p>
+
+<p>No, not really. You&rsquo;re used to doing this with your REST API server/clients. You&rsquo;re executing code on another computer without explicitly coding the commands on the remote computer. Put another way, you (the client) is telling a remote computer (the server) to do something; you don&rsquo;t care how it gets done just as long as you get a proper response back. Don&rsquo;t forget, you&rsquo;re using Layer 7 HTTP to make the communication in both cases (REST &amp; RPC).</p>
+
+<p>But the difference between REST and RPC is essentially how you&rsquo;re exposing your server&rsquo;s endpoints. For example&hellip;</p>
+
+<h2 id="protobuf">Protobuf</h2>
+
+<h2 id="the-power-of-grpc">The Power of gRPC</h2>
+
+<p>The power of gRPC is in the usage. This is made possible by Protobuf. Not only is gRPC generating structs with serialization and deserialization methods resulting from the Protobuf contract, but gRPC also uses the Protobuf contract to generate server/client code.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>After you understand what gRPC actually is, then you  is a fantastic framework. Use it!</p>
+
+<p>(If you&rsquo;ve found any errors in my explanations, please contact me with corrections)</p>
 
   </div>
 
   <div id=links>
     
+      <a class="basic-alignment left" href="http://rms1000watt.github.io/post/deploy-go-with-docker/">&laquo; Deploy Go With Docker</a>
     
-      <a class="basic-alignment left" href="http://rms1000watt.github.io/post/openssl-in-go/">OpenSSL in Go &raquo;</a>
+    
+      <a class="basic-alignment left" href="http://rms1000watt.github.io/post/awesome-everything/">Awesome Everything &raquo;</a>
     
   </div>
 </section>

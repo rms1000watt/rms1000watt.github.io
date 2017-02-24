@@ -205,6 +205,63 @@
     </item>
     
     <item>
+      <title>What is gRPC?</title>
+      <link>http://rms1000watt.github.io/post/what-is-grpc/</link>
+      <pubDate>Fri, 24 Feb 2017 07:11:58 -0800</pubDate>
+      
+      <guid>http://rms1000watt.github.io/post/what-is-grpc/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;INCOMPLETE GUIDE&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://grpc.io&#34;&gt;gRPC&lt;/a&gt; is Google&amp;rsquo;s &amp;ldquo;&amp;hellip;high performance, open-source universal RPC framework.&amp;rdquo; Which doesn&amp;rsquo;t really mean anything to the newcomer. To help you understand what this actually means, let&amp;rsquo;s look at what you&amp;rsquo;re used to already (REST API) and gRPC.&lt;/p&gt;
+
+&lt;p&gt;What you&amp;rsquo;re used to&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;REST API = HTTP1.1 + REST + JSON
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;gRPC&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gRPC = Google + RPC Framework
+gRPC = Google + (HTTP2 + Remote Procedure Call + Protobuf)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Going further to explain the differences between the two&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;http2&#34;&gt;HTTP2&lt;/h2&gt;
+
+&lt;p&gt;HTTP2 is the generation following HTTP1.1. The big takeaway in relation to gRPC is the full duplex communication across a single connection, which is one reason why it&amp;rsquo;s coined &amp;ldquo;high performance.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Another cool side effect of HTTP2 is it requires a TLS connection. This doesn&amp;rsquo;t mean your connection is Always secure, it means IFF you provide a secure connection then you can use HTTP2.&lt;/p&gt;
+
+&lt;h2 id=&#34;remote-procedure-call&#34;&gt;Remote Procedure Call&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Remote_procedure_call&#34;&gt;Remote Procedure Call&lt;/a&gt; or RPC is when &amp;ldquo;&amp;hellip;a computer program causes a procedure (subroutine) to execute in another address space (commonly on another computer on a shared network), which is coded as if it were a normal (local) procedure call, without the programmer explicitly coding the details for the remote interaction.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;WOW! Groundbreaking!&lt;/p&gt;
+
+&lt;p&gt;No, not really. You&amp;rsquo;re used to doing this with your REST API server/clients. You&amp;rsquo;re executing code on another computer without explicitly coding the commands on the remote computer. Put another way, you (the client) is telling a remote computer (the server) to do something; you don&amp;rsquo;t care how it gets done just as long as you get a proper response back. Don&amp;rsquo;t forget, you&amp;rsquo;re using Layer 7 HTTP to make the communication in both cases (REST &amp;amp; RPC).&lt;/p&gt;
+
+&lt;p&gt;But the difference between REST and RPC is essentially how you&amp;rsquo;re exposing your server&amp;rsquo;s endpoints. For example&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;protobuf&#34;&gt;Protobuf&lt;/h2&gt;
+
+&lt;h2 id=&#34;the-power-of-grpc&#34;&gt;The Power of gRPC&lt;/h2&gt;
+
+&lt;p&gt;The power of gRPC is in the usage. This is made possible by Protobuf. Not only is gRPC generating structs with serialization and deserialization methods resulting from the Protobuf contract, but gRPC also uses the Protobuf contract to generate server/client code.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;After you understand what gRPC actually is, then you  is a fantastic framework. Use it!&lt;/p&gt;
+
+&lt;p&gt;(If you&amp;rsquo;ve found any errors in my explanations, please contact me with corrections)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Deploy Go With Docker</title>
       <link>http://rms1000watt.github.io/post/deploy-go-with-docker/</link>
       <pubDate>Wed, 22 Feb 2017 07:11:58 -0800</pubDate>
@@ -322,6 +379,21 @@ go test
 &lt;ul&gt;
 &lt;li&gt;Complete this writeup&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OpenSSL in Go</title>
+      <link>http://rms1000watt.github.io/post/openssl-in-go/</link>
+      <pubDate>Tue, 24 Jan 2017 07:11:58 -0800</pubDate>
+      
+      <guid>http://rms1000watt.github.io/post/openssl-in-go/</guid>
+      <description>&lt;p&gt;Can anyone provide a working implementation of OpenSSL in Go for server/client that works out of the box? For instance, can I&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;go get -u -v your/openssl-go/project
+go run openssl-go-project.go
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&amp;hellip; without a hitch?&lt;/p&gt;
 </description>
     </item>
     

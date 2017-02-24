@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>http://rms1000watt.github.io/post/what-is-grpc/</loc>
+    <lastmod>2017-02-24T07:11:58-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://rms1000watt.github.io/post/deploy-go-with-docker/</loc>
     <lastmod>2017-02-22T07:11:58-08:00</lastmod>
   </url>
@@ -19,6 +24,11 @@
   <url>
     <loc>http://rms1000watt.github.io/post/intro-to-go/</loc>
     <lastmod>2017-02-22T07:11:58-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rms1000watt.github.io/post/openssl-in-go/</loc>
+    <lastmod>2017-01-24T07:11:58-08:00</lastmod>
   </url>
   
   <url>
