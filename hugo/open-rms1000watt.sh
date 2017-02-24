@@ -1,6 +1,8 @@
 #!/bin/sh
 
-RMS1000WATT_DIR="$GOPATH/src/github.com/rms1000watt/rms1000watt.github.io"
+# cd ~/Desktop && ln -s $GOPATH/src/github.com/rms1000watt/rms1000watt.github.io/hugo/open-rms1000watt.sh
+
+RMS1000WATT_DIR="$GOPATH/src/github.com/rms1000watt/rms1000watt.github.io/hugo"
 
 open_term()
 {

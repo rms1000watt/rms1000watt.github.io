@@ -8,6 +8,6 @@ title = "About"
 
 # Ryan Smith
 
-### I'll save you from having to read a cheesy headline... Whoops!
+### Building Tech
 
-Trained in Physics and Engineering. Working as a Senior Software Engineer at [Lantern Credit](www.lanterncredit.com). Checkout my Linkedin for more info and contact details. Checkout my Github for my awesome projects!
+Trained in Physics and Engineering. Working as a Senior Software Engineer at [Lantern Credit](www.lanterncredit.com). Interested in Software, Hardware, IT, Data Science, Physics, IoT, Entrepreneurship, etc. (but I actually take the time to understand the fundamentals). Checkout my Linkedin for more info and contact details. Checkout my Github for my awesome projects!
