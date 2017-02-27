@@ -6,13 +6,125 @@
     <description>Recent content on rms1000watt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jan 2020 07:11:58 -0800</lastBuildDate>
+    <lastBuildDate>Thu, 23 Feb 2017 07:11:58 -0800</lastBuildDate>
     <atom:link href="http://rms1000watt.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>What is gRPC?</title>
+      <link>http://rms1000watt.github.io/post/what-is-grpc/</link>
+      <pubDate>Thu, 23 Feb 2017 07:11:58 -0800</pubDate>
+      
+      <guid>http://rms1000watt.github.io/post/what-is-grpc/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://grpc.io&#34;&gt;gRPC&lt;/a&gt; is Google&amp;rsquo;s &amp;ldquo;&amp;hellip;high performance, open-source universal RPC framework.&amp;rdquo; Which doesn&amp;rsquo;t really mean anything to the newcomer. To help you understand what this actually means, let&amp;rsquo;s look at what you&amp;rsquo;re already used to REST API and compare it gRPC.&lt;/p&gt;
+
+&lt;p&gt;What you&amp;rsquo;re used to&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;REST API = HTTP1.1 + REST + JSON
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;gRPC&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gRPC = Google + RPC Framework
+gRPC = Google + (HTTP2 + Remote Procedure Call + Protobuf)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Going further to explain the differences between the two&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;http2&#34;&gt;HTTP2&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP/2&#34;&gt;HTTP2&lt;/a&gt; is the next generation, WWW protocol following HTTP1.1. The big takeaway in relation to gRPC is the full duplex communication across a single connection, which is one reason why it&amp;rsquo;s coined &amp;ldquo;high performance.&amp;rdquo; Put another way, with 1 connection between server and client, data can be transferred in both directions concurrently.&lt;/p&gt;
+
+&lt;p&gt;Another cool side effect of HTTP2 is it requires a TLS connection. This doesn&amp;rsquo;t mean your connection is Always secure, it means IFF you provide a secure connection then you can use HTTP2. Please checkout the Wikipedia article for more information regarding HTTP2.&lt;/p&gt;
+
+&lt;h2 id=&#34;remote-procedure-call&#34;&gt;Remote Procedure Call&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Remote_procedure_call&#34;&gt;Remote Procedure Call&lt;/a&gt; or RPC is when &amp;ldquo;&amp;hellip;a computer program causes a procedure (subroutine) to execute in another address space (commonly on another computer on a shared network), which is coded as if it were a normal (local) procedure call, without the programmer explicitly coding the details for the remote interaction.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;WOW! Groundbreaking!&lt;/p&gt;
+
+&lt;p&gt;No, not really. You&amp;rsquo;re used to doing this with your REST API server/clients. You&amp;rsquo;re executing code on another computer without explicitly coding the commands on the remote computer. Put another way, you (the client) is telling a remote computer (the server) to do something; you don&amp;rsquo;t care how it gets done just as long as you get a proper response back. Don&amp;rsquo;t forget, you&amp;rsquo;re using Layer 7 HTTP to make the communication in both cases (REST &amp;amp; RPC).&lt;/p&gt;
+
+&lt;p&gt;But the difference between REST and RPC is essentially how you&amp;rsquo;re exposing your server&amp;rsquo;s endpoints. For example, a REST server might only provide strict CRUD operations against an object, while an RPC server could provide more general computation functionalities such as &lt;code&gt;genHash()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;protobuf&#34;&gt;Protobuf&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;Protocol Buffers&lt;/a&gt; or Protobufs are one of Google&amp;rsquo;s serialization structures. If you&amp;rsquo;re comfortable with JSON or XML, then consider Protobufs in the same class as these. However, the magic power of Protobufs is the &lt;code&gt;.pb&lt;/code&gt; file. This file defines the structure (or dare I say schema) of your data. Then a Protobuf Compilier is used to actually generate the data structure in the language of your choosing. Therefore, you can define a data structure once and use it across all your languages.&lt;/p&gt;
+
+&lt;p&gt;Example Protobuf definition:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;message Person {
+  required string name = 1;
+  required int32 id = 2;
+  optional string email = 3;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;the-culmination-of-grpc&#34;&gt;The Culmination of gRPC&lt;/h2&gt;
+
+&lt;p&gt;gRPC takes this one step further by adding &lt;code&gt;Services&lt;/code&gt; to the Protobuf definition file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string greeting = 1;
+}
+
+message HelloResponse {
+  string reply = 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By using a gRPC plugin for the Protobuf Compilier, the compilier will also generate server/client code for any language of your chosing.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;re used to REST APIs where HTTP1.1, REST, and JSON are used, consider gRPC as the next generation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTTP1.1 =&amp;gt; HTTP2&lt;/li&gt;
+&lt;li&gt;REST =&amp;gt; RPC&lt;/li&gt;
+&lt;li&gt;JSON =&amp;gt; Protobuf&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;
+But, I do hate to talk your ear off. You&amp;rsquo;ll learn a lot better by just playing with the actual tools. I can say I&amp;rsquo;ve used gRPC in the proper setting and it has lived up to the hype. So, go follow the &lt;a href=&#34;http://www.grpc.io/docs/quickstart/&#34;&gt;gRPC tutorials&lt;/a&gt; for your language of choice and get to playing!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OpenSSL in Go</title>
+      <link>http://rms1000watt.github.io/post/openssl-in-go/</link>
+      <pubDate>Wed, 22 Feb 2017 07:11:58 -0800</pubDate>
+      
+      <guid>http://rms1000watt.github.io/post/openssl-in-go/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Food for thought: What if you wanted to use Go AND meet compliance requirements?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Golang devs have specifically mentioned that some compliance requirements are not planned to be incorporated into the code base &lt;a href=&#34;https://groups.google.com/forum/#!topic/golang-nuts/xnjCdW8HaOE&#34;&gt;as seen here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, an open question to the community: can anyone provide a working implementation of OpenSSL in Go for server/client that works out of the box? For instance, is there a project where I could&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go get -u -v your/openssl-go/project
+go run openssl-go-project.go
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; without a hitch?&lt;/p&gt;
+
+&lt;p&gt;Even using the exact steps defined at &lt;a href=&#34;https://godoc.org/github.com/spacemonkeygo/openssl&#34;&gt;SpaceMonkeyGo&lt;/a&gt; didn&amp;rsquo;t yield positive results.&lt;/p&gt;
+
+&lt;p&gt;Let me know what else is known!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Awesome Everything</title>
       <link>http://rms1000watt.github.io/post/awesome-everything/</link>
-      <pubDate>Fri, 24 Jan 2020 07:11:58 -0800</pubDate>
+      <pubDate>Sun, 22 Jan 2017 07:11:58 -0800</pubDate>
       
       <guid>http://rms1000watt.github.io/post/awesome-everything/</guid>
       <description>
@@ -33,9 +145,11 @@
 &lt;li&gt;Security&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
 
-&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+&lt;h4 id=&#34;introduction&#34;&gt;Introduction&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gobyexample.com/&#34;&gt;Go By Example&lt;/a&gt;&lt;/li&gt;
@@ -43,66 +157,76 @@
 &lt;li&gt;&lt;a href=&#34;https://dave.cheney.net/resources-for-new-go-programmers&#34;&gt;Dave Cheney&amp;rsquo;s Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;tutorials&#34;&gt;Tutorials&lt;/h3&gt;
+&lt;h4 id=&#34;tutorials&#34;&gt;Tutorials&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.codeship.com/building-minimal-docker-containers-for-go-applications/&#34;&gt;Go with Docker from Scratch&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;awesomego&#34;&gt;AwesomeGo&lt;/h3&gt;
+&lt;h4 id=&#34;awesomego&#34;&gt;AwesomeGo&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://awesome-go.com/&#34;&gt;Awesome Go&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/kardianos/govendor&#34;&gt;GoVendor&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
 
-&lt;h3 id=&#34;tutorials-1&#34;&gt;Tutorials&lt;/h3&gt;
+&lt;h4 id=&#34;tutorials-1&#34;&gt;Tutorials&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://fabacademy.org/archives/2015/doc/WebSocketConsole.html&#34;&gt;Multiprocessing with Websockets&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;servers&#34;&gt;Servers&lt;/h3&gt;
+&lt;h4 id=&#34;servers&#34;&gt;Servers&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.tornadoweb.org/en/stable/&#34;&gt;Tornado Web&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;c&#34;&gt;C&lt;/h2&gt;
 
-&lt;h3 id=&#34;servers-1&#34;&gt;Servers&lt;/h3&gt;
+&lt;h4 id=&#34;servers-1&#34;&gt;Servers&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/lpereira/lwan&#34;&gt;Lwan&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;c-1&#34;&gt;C++&lt;/h2&gt;
 
-&lt;h3 id=&#34;tutorials-2&#34;&gt;Tutorials&lt;/h3&gt;
+&lt;h4 id=&#34;tutorials-2&#34;&gt;Tutorials&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://mrbook.org/blog/tutorials/make/&#34;&gt;Makefiles&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;reactjs&#34;&gt;ReactJS&lt;/h2&gt;
 
-&lt;h3 id=&#34;tutorials-3&#34;&gt;Tutorials&lt;/h3&gt;
+&lt;h4 id=&#34;tutorials-3&#34;&gt;Tutorials&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://tutorials.pluralsight.com/interesting-apis/building-a-real-time-application-with-react-react-router-horizon-io-and-oauth&#34;&gt;React + Horizon.io (with OAuth example)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;html&#34;&gt;HTML&lt;/h2&gt;
 
-&lt;h3 id=&#34;templates&#34;&gt;Templates&lt;/h3&gt;
+&lt;h4 id=&#34;templates&#34;&gt;Templates&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://html5up.net/&#34;&gt;HTML5 Up&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;generators&#34;&gt;Generators&lt;/h3&gt;
+&lt;h4 id=&#34;generators&#34;&gt;Generators&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.mkdocs.org/&#34;&gt;MkDocs&lt;/a&gt;&lt;/li&gt;
@@ -110,56 +234,62 @@
 &lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;assets&#34;&gt;Assets&lt;/h3&gt;
+&lt;h4 id=&#34;assets&#34;&gt;Assets&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://unsplash.com/&#34;&gt;Unsplash&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;css&#34;&gt;CSS&lt;/h3&gt;
+&lt;h4 id=&#34;css&#34;&gt;CSS&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://flexboxgrid.com/&#34;&gt;Flexbox grids&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://css-tricks.com/snippets/css/a-guide-to-flexbox/&#34;&gt;Flexbox&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;serialization&#34;&gt;Serialization&lt;/h2&gt;
 
-&lt;h3 id=&#34;yaml&#34;&gt;YAML&lt;/h3&gt;
+&lt;h4 id=&#34;yaml&#34;&gt;YAML&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.yaml.org/start.html&#34;&gt;http://www.yaml.org/start.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;protobuf&#34;&gt;Protobuf&lt;/h3&gt;
+&lt;h4 id=&#34;protobuf&#34;&gt;Protobuf&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;https://developers.google.com/protocol-buffers/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;flatbuf&#34;&gt;Flatbuf&lt;/h3&gt;
+&lt;h4 id=&#34;flatbuf&#34;&gt;Flatbuf&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://google.github.io/flatbuffers/&#34;&gt;https://google.github.io/flatbuffers/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;json&#34;&gt;JSON&lt;/h3&gt;
+&lt;h4 id=&#34;json&#34;&gt;JSON&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.json.org/&#34;&gt;http://www.json.org/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;aws&#34;&gt;AWS&lt;/h2&gt;
 
-&lt;h3 id=&#34;tutorials-4&#34;&gt;Tutorials&lt;/h3&gt;
+&lt;h4 id=&#34;tutorials-4&#34;&gt;Tutorials&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/awslabs/serverless-application-model/tree/master/examples&#34;&gt;SAM Examples&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;security&#34;&gt;Security&lt;/h2&gt;
 
-&lt;h3 id=&#34;blogs&#34;&gt;Blogs&lt;/h3&gt;
+&lt;h4 id=&#34;blogs&#34;&gt;Blogs&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://samy.pl/&#34;&gt;Samy Kamkar&lt;/a&gt;&lt;/li&gt;
@@ -167,7 +297,7 @@
 &lt;li&gt;&lt;a href=&#34;https://thehackerblog.com/&#34;&gt;Mandatory Programmer&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;hardware&#34;&gt;Hardware&lt;/h3&gt;
+&lt;h4 id=&#34;hardware&#34;&gt;Hardware&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/ecthros/pina-colada&#34;&gt;Piña Colada (WiFi Pinapple 4 RPI)&lt;/a&gt;&lt;/li&gt;
@@ -177,7 +307,7 @@
 &lt;li&gt;&lt;a href=&#34;https://www.wifipineapple.com/&#34;&gt;Wifi Pineapple&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;software&#34;&gt;Software&lt;/h3&gt;
+&lt;h4 id=&#34;software&#34;&gt;Software&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://testssl.sh/&#34;&gt;TestSSL&lt;/a&gt;&lt;/li&gt;
@@ -188,233 +318,18 @@
 &lt;li&gt;&lt;a href=&#34;https://getlantern.org/&#34;&gt;Lantern&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;services&#34;&gt;Services&lt;/h3&gt;
+&lt;h4 id=&#34;services&#34;&gt;Services&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.privateinternetaccess.com&#34;&gt;VPN Private Internet Access&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;videos&#34;&gt;Videos&lt;/h3&gt;
+&lt;h4 id=&#34;videos&#34;&gt;Videos&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=RsksLgmwNzA&#34;&gt;Defcon 21 - The Bluetooth Device Database&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=85uwy0ACJJw&#34;&gt;Defcon 22 - Grant Bugher - Detecting Bluetooth Surveillance Systems&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=00A36VABIA4&#34;&gt;Defcon 24 - Marc Newlin - MouseJack: Injecting Keystrokes into Wireless Mice&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>What is gRPC?</title>
-      <link>http://rms1000watt.github.io/post/what-is-grpc/</link>
-      <pubDate>Fri, 24 Feb 2017 07:11:58 -0800</pubDate>
-      
-      <guid>http://rms1000watt.github.io/post/what-is-grpc/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;INCOMPLETE GUIDE&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://grpc.io&#34;&gt;gRPC&lt;/a&gt; is Google&amp;rsquo;s &amp;ldquo;&amp;hellip;high performance, open-source universal RPC framework.&amp;rdquo; Which doesn&amp;rsquo;t really mean anything to the newcomer. To help you understand what this actually means, let&amp;rsquo;s look at what you&amp;rsquo;re used to already (REST API) and gRPC.&lt;/p&gt;
-
-&lt;p&gt;What you&amp;rsquo;re used to&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;REST API = HTTP1.1 + REST + JSON
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;gRPC&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gRPC = Google + RPC Framework
-gRPC = Google + (HTTP2 + Remote Procedure Call + Protobuf)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Going further to explain the differences between the two&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;http2&#34;&gt;HTTP2&lt;/h2&gt;
-
-&lt;p&gt;HTTP2 is the generation following HTTP1.1. The big takeaway in relation to gRPC is the full duplex communication across a single connection, which is one reason why it&amp;rsquo;s coined &amp;ldquo;high performance.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;Another cool side effect of HTTP2 is it requires a TLS connection. This doesn&amp;rsquo;t mean your connection is Always secure, it means IFF you provide a secure connection then you can use HTTP2.&lt;/p&gt;
-
-&lt;h2 id=&#34;remote-procedure-call&#34;&gt;Remote Procedure Call&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Remote_procedure_call&#34;&gt;Remote Procedure Call&lt;/a&gt; or RPC is when &amp;ldquo;&amp;hellip;a computer program causes a procedure (subroutine) to execute in another address space (commonly on another computer on a shared network), which is coded as if it were a normal (local) procedure call, without the programmer explicitly coding the details for the remote interaction.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;WOW! Groundbreaking!&lt;/p&gt;
-
-&lt;p&gt;No, not really. You&amp;rsquo;re used to doing this with your REST API server/clients. You&amp;rsquo;re executing code on another computer without explicitly coding the commands on the remote computer. Put another way, you (the client) is telling a remote computer (the server) to do something; you don&amp;rsquo;t care how it gets done just as long as you get a proper response back. Don&amp;rsquo;t forget, you&amp;rsquo;re using Layer 7 HTTP to make the communication in both cases (REST &amp;amp; RPC).&lt;/p&gt;
-
-&lt;p&gt;But the difference between REST and RPC is essentially how you&amp;rsquo;re exposing your server&amp;rsquo;s endpoints. For example&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;protobuf&#34;&gt;Protobuf&lt;/h2&gt;
-
-&lt;h2 id=&#34;the-power-of-grpc&#34;&gt;The Power of gRPC&lt;/h2&gt;
-
-&lt;p&gt;The power of gRPC is in the usage. This is made possible by Protobuf. Not only is gRPC generating structs with serialization and deserialization methods resulting from the Protobuf contract, but gRPC also uses the Protobuf contract to generate server/client code.&lt;/p&gt;
-
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-
-&lt;p&gt;After you understand what gRPC actually is, then you  is a fantastic framework. Use it!&lt;/p&gt;
-
-&lt;p&gt;(If you&amp;rsquo;ve found any errors in my explanations, please contact me with corrections)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Deploy Go With Docker</title>
-      <link>http://rms1000watt.github.io/post/deploy-go-with-docker/</link>
-      <pubDate>Wed, 22 Feb 2017 07:11:58 -0800</pubDate>
-      
-      <guid>http://rms1000watt.github.io/post/deploy-go-with-docker/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;INCOMPLETE GUIDE&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Read Intro To Docker and Intro To Go first.&lt;/p&gt;
-
-&lt;h2 id=&#34;build-go-binary&#34;&gt;Build Go Binary&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;create-dockerfile&#34;&gt;Create Dockerfile&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;build-docker-container&#34;&gt;Build Docker Container&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;docker build
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;deploy-docker-container&#34;&gt;Deploy Docker Container&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;docker push &lt;span style=&#34;font-style: italic&#34;&gt;# container-name&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;use-docker-container&#34;&gt;Use Docker Container&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;docker pull &lt;span style=&#34;font-style: italic&#34;&gt;# container-name&lt;/span&gt;
-docker start &lt;span style=&#34;font-style: italic&#34;&gt;# container-name&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h4 id=&#34;todo&#34;&gt;TODO&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Complete this writeup&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Intro to Docker</title>
-      <link>http://rms1000watt.github.io/post/intro-to-docker/</link>
-      <pubDate>Wed, 22 Feb 2017 07:11:58 -0800</pubDate>
-      
-      <guid>http://rms1000watt.github.io/post/intro-to-docker/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;INCOMPLETE GUIDE&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Here is an introduction to Docker from someone who recently got over the small learning curve.&lt;/p&gt;
-
-&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
-
-&lt;h2 id=&#34;deploying&#34;&gt;Deploying&lt;/h2&gt;
-
-&lt;h2 id=&#34;using-deployed-containers&#34;&gt;Using deployed containers&lt;/h2&gt;
-
-&lt;h4 id=&#34;todo&#34;&gt;TODO&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Complete this writeup&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Intro to Go</title>
-      <link>http://rms1000watt.github.io/post/intro-to-go/</link>
-      <pubDate>Wed, 22 Feb 2017 07:11:58 -0800</pubDate>
-      
-      <guid>http://rms1000watt.github.io/post/intro-to-go/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;INCOMPLETE GUIDE&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Here is an introduction to Go from someone who recently got over the learning curve.&lt;/p&gt;
-
-&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;Using Homebrew&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;brew install go
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Using Latest&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;setting-up-your-environment&#34;&gt;Setting up your environment&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;GOPATH&lt;/code&gt;?!&lt;/p&gt;
-
-&lt;h2 id=&#34;using-your-environment&#34;&gt;Using your environment&lt;/h2&gt;
-
-&lt;p&gt;Get VS Code&lt;/p&gt;
-
-&lt;h2 id=&#34;testing&#34;&gt;Testing&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;touch main_test.go
-&lt;span style=&#34;font-style: italic&#34;&gt;# edit main_test.go&lt;/span&gt;
-go test
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;building&#34;&gt;Building&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;GOOS=darwin GOARCH=amd64 go build
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;deploying&#34;&gt;Deploying&lt;/h2&gt;
-
-&lt;p&gt;See my guide using Golang + Docker. Otherwise, just slap &lt;code&gt;upstart&lt;/code&gt;/&lt;code&gt;systemd&lt;/code&gt; infront of your binary and let it run forever.&lt;/p&gt;
-
-&lt;h4 id=&#34;todo&#34;&gt;TODO&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Complete this writeup&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>OpenSSL in Go</title>
-      <link>http://rms1000watt.github.io/post/openssl-in-go/</link>
-      <pubDate>Tue, 24 Jan 2017 07:11:58 -0800</pubDate>
-      
-      <guid>http://rms1000watt.github.io/post/openssl-in-go/</guid>
-      <description>&lt;p&gt;Can anyone provide a working implementation of OpenSSL in Go for server/client that works out of the box? For instance, can I&amp;hellip;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;go get -u -v your/openssl-go/project
-go run openssl-go-project.go
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&amp;hellip; without a hitch?&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Python to Go</title>
-      <link>http://rms1000watt.github.io/post/python-to-go/</link>
-      <pubDate>Sat, 21 Jan 2017 07:11:58 -0800</pubDate>
-      
-      <guid>http://rms1000watt.github.io/post/python-to-go/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;INCOMPLETE GUIDE&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Moving from Python to Go has been a successful experience.&lt;/p&gt;
-
-&lt;p&gt;Checkout my &lt;a href=&#34;https://github.com/rms1000watt/hello-world-go-grpc&#34;&gt;Go-gRPC&lt;/a&gt; implmentation.&lt;/p&gt;
-
-&lt;h4 id=&#34;todo&#34;&gt;TODO&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Add code snippets comparing Py &amp;amp; Go&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -427,13 +342,11 @@ go run openssl-go-project.go
       <guid>http://rms1000watt.github.io/about/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/-7p1ZN9D7SvY/AAAAAAAAAAI/AAAAAAAAAAA/AAomvV2AExX2i-Iopp84-9f60J44Taurcw/s192-c-mo/photo.jpg&#34; alt=&#34;My Face&#34; /&gt;&lt;/p&gt;
-
 &lt;h1 id=&#34;ryan-smith&#34;&gt;Ryan Smith&lt;/h1&gt;
 
 &lt;h3 id=&#34;building-tech&#34;&gt;Building Tech&lt;/h3&gt;
 
-&lt;p&gt;Trained in Physics and Engineering. Working as a Senior Software Engineer at &lt;a href=&#34;www.lanterncredit.com&#34;&gt;Lantern Credit&lt;/a&gt;. Interested in Software, Hardware, IT, Data Science, Physics, IoT, etc. I&amp;rsquo;m a fantastic technical writer but not much of a creative writer, so expect this blog to be right to the point, lol.&lt;/p&gt;
+&lt;p&gt;Trained in Physics and Engineering. Working as a Senior Software Engineer at &lt;a href=&#34;http://www.lanterncredit.com&#34;&gt;Lantern Credit&lt;/a&gt;. Interested in Software, Hardware, IT, Data Science, Physics, IoT, etc. I&amp;rsquo;m a fantastic technical writer but not much of a creative writer, so expect this blog to be right to the point, lol.&lt;/p&gt;
 
 &lt;p&gt;Checkout my Linkedin for more info and contact details. Checkout my Gist &amp;amp; Github for my awesome snippets &amp;amp; projects!&lt;/p&gt;
 </description>

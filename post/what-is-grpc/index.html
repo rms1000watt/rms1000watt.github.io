@@ -1,417 +1,71 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
-    <base href="http://rms1000watt.github.io">
-    
-
-    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400' rel='stylesheet' type='text/css'>
-
-    <title>
-      
-      
-         What is gRPC? 
-      
-    </title>
-    <link rel="canonical" href="http://rms1000watt.github.io/post/what-is-grpc/">
-
-    <style>
-  * {
-    border:0;
-    font:inherit;
-    font-size:100%;
-    vertical-align:baseline;
-    margin:0;
-    padding:0;
-    color: black;
-  }
-
-  body {
-    font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
-    font-size:17px;
-    line-height:160%;
-    color:#1d1313;
-    max-width:700px;
-    margin:auto;
-  }
-
-  p {
-    margin: 20px 0;
-  }
-
-  a img {
-    border:none;
-  }
-
-  img {
-    margin: 10px auto 10px auto;
-    max-width: 100%;
-    display: block;
-  }
-
-  pre, code {
-    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    background-color: #f7f7f7;
-  }
-
-  code {
-    font-size: 12px;
-    padding: 4px;
-  }
-
-  pre {
-    margin-top: 0;
-    margin-bottom: 16px;
-    word-wrap: normal;
-    padding: 16px;
-    overflow: auto;
-    font-size: 85%;
-    line-height: 1.45;
-  }
-
-  pre>code {
-    padding: 0;
-    margin: 0;
-    font-size: 100%;
-    word-break: normal;
-    white-space: pre;
-    background: transparent;
-    border: 0;
-  }
-
-  pre code {
-    display: inline;
-    max-width: auto;
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-    line-height: inherit;
-    word-wrap: normal;
-    background-color: transparent;
-    border: 0;
-  }
-
-  pre code::before,
-  pre code::after {
-    content: normal;
-  }
-
-  em,q,em,dfn {
-    font-style:italic;
-  }
-
-  .sans,html .gist .gist-file .gist-meta {
-    font-family:"Open Sans","Myriad Pro",Myriad,sans-serif;
-  }
-
-  .mono,pre,code,tt,p code,li code {
-    font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
-  }
-
-  .heading,.serif,h1,h2,h3 {
-    font-family:"Old Standard TT",serif;
-  }
-
-  strong {
-    font-weight:600;
-  }
-
-  q:before {
-    content:"\201C";
-  }
-
-  q:after {
-    content:"\201D";
-  }
-
-  del,s {
-    text-decoration:line-through;
-  }
-
-  blockquote {
-    font-family:"Old Standard TT",serif;
-    text-align:center;
-    padding:50px;
-  }
-
-  blockquote p {
-    display:inline-block;
-    font-style:italic;
-  }
-
-  blockquote:before,blockquote:after {
-    font-family:"Old Standard TT",serif;
-    content:'\201C';
-    font-size:35px;
-    color:#403c3b;
-  }
-
-  blockquote:after {
-    content:'\201D';
-  }
-
-  hr {
-    width:40%;
-    height: 1px;
-    background:#403c3b;
-    margin: 25px auto;
-  }
-
-  h1 {
-    font-size:35px;
-  }
-
-  h2 {
-    font-size:28px;
-  }
-
-  h3 {
-    font-size:22px;
-    margin-top:18px;
-  }
-
-  h1 a,h2 a,h3 a {
-    text-decoration:none;
-  }
-
-  h1,h2 {
-    margin-top:28px;
-  }
-
-  #sub-header, time {
-    color:#403c3b;
-    font-size:13px;
-  }
-
-  #sub-header {
-    margin: 0 4px;
-  }
-
-  #nav h1 a {
-    font-size:35px;
-    color:#1d1313;
-    line-height:120%;
-  }
-
-  .posts_listing a,#nav a {
-    text-decoration: none;
-  }
-
-  li {
-    margin-left: 20px;
-  }
-
-  ul li {
-    margin-left: 5px;
-  }
-
-  ul li {
-    list-style-type: none;
-  }
-  ul li:before {
-    content:"\00BB \0020";
-  }
-
-  #nav ul li:before, .posts_listing li:before {
-    content:'';
-    margin-right:0;
-  }
-
-  #content {
-    text-align:left;
-    width:100%;
-    font-size:15px;
-    padding:60px 0 80px;
-  }
-
-  #content h1,#content h2 {
-    margin-bottom:5px;
-  }
-
-  #content h2 {
-    font-size:25px;
-  }
-
-  #content .entry-content {
-    margin-top:15px;
-  }
-
-  #content time {
-    margin-left:3px;
-  }
-
-  #content h1 {
-    font-size:30px;
-  }
-
-  .highlight {
-    margin: 10px 0;
-  }
-
-  .posts_listing {
-    margin:0 0 50px;
-  }
-
-  .posts_listing li {
-    margin:0 0 25px 15px;
-  }
-
-  .posts_listing li a:hover,#nav a:hover {
-    text-decoration: underline;
-  }
-
-  #nav {
-    text-align:center;
-    position:static;
-    margin-top:60px;
-  }
-
-  #nav ul {
-    display: table;
-    margin: 8px auto 0 auto;
-  }
-
-  #nav li {
-    list-style-type:none;
-    display:table-cell;
-    font-size:15px;
-    padding: 0 20px;
-  }
-
-  #links {
-    margin: 50px 0 0 0;
-  }
-
-  #links :nth-child(2) {
-    float:right;
-  }
-
-  #not-found {
-    text-align: center;
-  }
-
-  #not-found a {
-    font-family:"Old Standard TT",serif;
-    font-size: 200px;
-    text-decoration: none;
-    display: inline-block;
-    padding-top: 225px;
-  }
-
-  @media (max-width: 750px) {
-    body {
-      padding-left:20px;
-      padding-right:20px;
-    }
-
-    #nav h1 a {
-      font-size:28px;
-    }
-
-    #nav li {
-      font-size:13px;
-      padding: 0 15px;
-    }
-
-    #content {
-      margin-top:0;
-      padding-top:50px;
-      font-size:14px;
-    }
-
-    #content h1 {
-      font-size:25px;
-    }
-
-    #content h2 {
-      font-size:22px;
-    }
-
-    .posts_listing li div {
-      font-size:12px;
-    }
-  }
-
-  @media (max-width: 400px) {
-    body {
-      padding-left:20px;
-      padding-right:20px;
-    }
-
-    #nav h1 a {
-      font-size:22px;
-    }
-
-    #nav li {
-      font-size:12px;
-      padding: 0 10px;
-    }
-
-    #content {
-      margin-top:0;
-      padding-top:20px;
-      font-size:12px;
-    }
-
-    #content h1 {
-      font-size:20px;
-    }
-
-    #content h2 {
-      font-size:18px;
-    }
-
-    .posts_listing li div{
-      font-size:12px;
-    }
-  }
-</style>
-
-
-    <link rel="shortcut icon" href="http://rms1000watt.github.io/favicon.ico">
-
-    
-  </head>
-
-  <body>
-    <section id=nav>
-      <h1><a href="http://rms1000watt.github.io/">rms1000watt</a></h1>
-      <ul>
-        
-          <li><a href="http://rms1000watt.github.io/about">About</a></li>
-        
-          <li><a href="https://gist.github.com/rms1000watt">Gists</a></li>
-        
-          <li><a href="https://github.com/rms1000watt">Github</a></li>
-        
-          <li><a href="https://linkedin.com/in/ryanmatthewsmith">Linkedin</a></li>
-        
-      </ul>
-    </section>
-
-
-<section id=content>
-  <h1> What is gRPC? </h1>
-
-  <div id=sub-header>
-    February 2017 · 2 minute read
-  </div>
-
-  <div class="entry-content">
-    
-
-<p><em>INCOMPLETE GUIDE</em></p>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="rms1000watt">
+		<meta name="description" content="Mostly Software Engineering">
+		<meta name="generator" content="Hugo 0.18.1" />
+		<title>What is gRPC? &middot; rms1000watt</title>
+		<link rel="shortcut icon" href="http://rms1000watt.github.ioimages/favicon.ico">
+		<link rel="stylesheet" href="http://rms1000watt.github.iocss/style.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-light.min.css">
+		
+
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://rms1000watt.github.io'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://rms1000watt.github.iopost'>Archive</a>
+	
+
+	
+
+	
+		<a href='http://rms1000watt.github.ioabout'>About</a>
+	
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        
+                            What is gRPC?
+                        
+                    </h1>
+                    <h2 class="headline">
+                    Feb 23, 2017 07:11
+                    · 626 words
+                    · 3 minutes read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
 
 <p><strong>TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!</strong></p>
 
-<p><a href="http://grpc.io">gRPC</a> is Google&rsquo;s &ldquo;&hellip;high performance, open-source universal RPC framework.&rdquo; Which doesn&rsquo;t really mean anything to the newcomer. To help you understand what this actually means, let&rsquo;s look at what you&rsquo;re used to already (REST API) and gRPC.</p>
+<p><a href="http://grpc.io">gRPC</a> is Google&rsquo;s &ldquo;&hellip;high performance, open-source universal RPC framework.&rdquo; Which doesn&rsquo;t really mean anything to the newcomer. To help you understand what this actually means, let&rsquo;s look at what you&rsquo;re already used to REST API and compare it gRPC.</p>
 
 <p>What you&rsquo;re used to</p>
 
@@ -428,9 +82,9 @@ gRPC = Google + (HTTP2 + Remote Procedure Call + Protobuf)
 
 <h2 id="http2">HTTP2</h2>
 
-<p>HTTP2 is the generation following HTTP1.1. The big takeaway in relation to gRPC is the full duplex communication across a single connection, which is one reason why it&rsquo;s coined &ldquo;high performance.&rdquo;</p>
+<p><a href="https://en.wikipedia.org/wiki/HTTP/2">HTTP2</a> is the next generation, WWW protocol following HTTP1.1. The big takeaway in relation to gRPC is the full duplex communication across a single connection, which is one reason why it&rsquo;s coined &ldquo;high performance.&rdquo; Put another way, with 1 connection between server and client, data can be transferred in both directions concurrently.</p>
 
-<p>Another cool side effect of HTTP2 is it requires a TLS connection. This doesn&rsquo;t mean your connection is Always secure, it means IFF you provide a secure connection then you can use HTTP2.</p>
+<p>Another cool side effect of HTTP2 is it requires a TLS connection. This doesn&rsquo;t mean your connection is Always secure, it means IFF you provide a secure connection then you can use HTTP2. Please checkout the Wikipedia article for more information regarding HTTP2.</p>
 
 <h2 id="remote-procedure-call">Remote Procedure Call</h2>
 
@@ -440,36 +94,134 @@ gRPC = Google + (HTTP2 + Remote Procedure Call + Protobuf)
 
 <p>No, not really. You&rsquo;re used to doing this with your REST API server/clients. You&rsquo;re executing code on another computer without explicitly coding the commands on the remote computer. Put another way, you (the client) is telling a remote computer (the server) to do something; you don&rsquo;t care how it gets done just as long as you get a proper response back. Don&rsquo;t forget, you&rsquo;re using Layer 7 HTTP to make the communication in both cases (REST &amp; RPC).</p>
 
-<p>But the difference between REST and RPC is essentially how you&rsquo;re exposing your server&rsquo;s endpoints. For example&hellip;</p>
+<p>But the difference between REST and RPC is essentially how you&rsquo;re exposing your server&rsquo;s endpoints. For example, a REST server might only provide strict CRUD operations against an object, while an RPC server could provide more general computation functionalities such as <code>genHash()</code>.</p>
 
 <h2 id="protobuf">Protobuf</h2>
 
-<h2 id="the-power-of-grpc">The Power of gRPC</h2>
+<p><a href="https://developers.google.com/protocol-buffers/">Protocol Buffers</a> or Protobufs are one of Google&rsquo;s serialization structures. If you&rsquo;re comfortable with JSON or XML, then consider Protobufs in the same class as these. However, the magic power of Protobufs is the <code>.pb</code> file. This file defines the structure (or dare I say schema) of your data. Then a Protobuf Compilier is used to actually generate the data structure in the language of your choosing. Therefore, you can define a data structure once and use it across all your languages.</p>
 
-<p>The power of gRPC is in the usage. This is made possible by Protobuf. Not only is gRPC generating structs with serialization and deserialization methods resulting from the Protobuf contract, but gRPC also uses the Protobuf contract to generate server/client code.</p>
+<p>Example Protobuf definition:</p>
+
+<pre><code>message Person {
+  required string name = 1;
+  required int32 id = 2;
+  optional string email = 3;
+}
+</code></pre>
+
+<h2 id="the-culmination-of-grpc">The Culmination of gRPC</h2>
+
+<p>gRPC takes this one step further by adding <code>Services</code> to the Protobuf definition file.</p>
+
+<pre><code>service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string greeting = 1;
+}
+
+message HelloResponse {
+  string reply = 1;
+}
+</code></pre>
+
+<p>By using a gRPC plugin for the Protobuf Compilier, the compilier will also generate server/client code for any language of your chosing.</p>
 
 <h2 id="summary">Summary</h2>
 
-<p>After you understand what gRPC actually is, then you  is a fantastic framework. Use it!</p>
+<p>If you&rsquo;re used to REST APIs where HTTP1.1, REST, and JSON are used, consider gRPC as the next generation</p>
 
-<p>(If you&rsquo;ve found any errors in my explanations, please contact me with corrections)</p>
+<ul>
+<li>HTTP1.1 =&gt; HTTP2</li>
+<li>REST =&gt; RPC</li>
+<li>JSON =&gt; Protobuf</li>
+</ul>
 
-  </div>
+<p><br>
+But, I do hate to talk your ear off. You&rsquo;ll learn a lot better by just playing with the actual tools. I can say I&rsquo;ve used gRPC in the proper setting and it has lived up to the hype. So, go follow the <a href="http://www.grpc.io/docs/quickstart/">gRPC tutorials</a> for your language of choice and get to playing!</p>
 
-  <div id=links>
-    
-      <a class="basic-alignment left" href="http://rms1000watt.github.io/post/deploy-go-with-docker/">&laquo; Deploy Go With Docker</a>
-    
-    
-      <a class="basic-alignment left" href="http://rms1000watt.github.io/post/awesome-everything/">Awesome Everything &raquo;</a>
-    
-  </div>
-</section>
+                </section>
+            </article>
 
-  </div>
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rms1000watt'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="http://gist.github.com/rms1000watt">
+        <i class="fa fa-github-alt"></i>
+    </a>
+    
+    <a class="symbol" href="http://www.github.com/rms1000watt">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="http://www.linkedin.com/in/ryanmatthewsmith">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2017 <i class="fa fa-heart" aria-hidden="true"></i> rms1000watt
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="http://nodejh.com">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="http://rms1000watt.github.iojs/main.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
   
-</body>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-92611586-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+    </body>
 </html>
-
-
-

@@ -1,7 +1,7 @@
 +++
 date = "2017-01-21T7:11:58-08:00"
 title = "Python to Go"
-
+draft = true
 +++
 
 *INCOMPLETE GUIDE*

@@ -3,15 +3,58 @@ title = "rms1000watt"
 baseurl = "http://rms1000watt.github.io"
 author = "Ryan Smith"
 canonifyurls = true
-theme = "black-and-light"
+theme = "hugo-theme-cactus-plus"
 publishDir = ".."
+googleAnalytics = "UA-92611586-1"
 
 pygmentsstyle       = "bw"
 pygmentscodefences  = true
 
+
 [params]
   sitename = "rms1000watt"
 
+  name = "rms1000watt"
+  description = "Mostly Software Engineering"
+  bio = "Engineering Tutorials and Guides"
+
+  disqusShortname = "rms1000watt"
+  enableDisqus = true
+
+  enableGoogleAnalytics = true
+
+  enableTags = false
+
+	# The variables below are optionally too and can be used to
+	# translate or customize each string of the theme.
+	# Navigation links
+	home = ""
+	about = ""
+	archive = ""
+	subscribe = ""
+	# Pagination links
+	olderPosts = ""
+	newerPosts = ""
+	readMore = ""
+	copyright = ""
+	# Sharing options and author information in posts
+	aboutAuthor = "I am so interesting."
+	tweet = ""
+	share = ""
+	# 404 page
+	title404 = ""
+	subtitle404 = ""
+
+	# Choose a font for the social icons in the footer. Either "mono-social or "font-awesome"
+	iconFont = "font-awesome"
+
+# Add additional social link entries underneath
+[social]
+  github-square = "http://www.github.com/rms1000watt"
+  github-alt = "http://gist.github.com/rms1000watt"
+  linkedin-square = "http://www.linkedin.com/in/ryanmatthewsmith"
+
+# For black-and-light
 [[menu.main]]
     name = "About"
     url  = "/about"

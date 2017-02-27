@@ -1,411 +1,67 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
-    <base href="http://rms1000watt.github.io">
-    
-
-    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400' rel='stylesheet' type='text/css'>
-
-    <title>
-      
-      
-         Awesome Everything 
-      
-    </title>
-    <link rel="canonical" href="http://rms1000watt.github.io/post/awesome-everything/">
-
-    <style>
-  * {
-    border:0;
-    font:inherit;
-    font-size:100%;
-    vertical-align:baseline;
-    margin:0;
-    padding:0;
-    color: black;
-  }
-
-  body {
-    font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
-    font-size:17px;
-    line-height:160%;
-    color:#1d1313;
-    max-width:700px;
-    margin:auto;
-  }
-
-  p {
-    margin: 20px 0;
-  }
-
-  a img {
-    border:none;
-  }
-
-  img {
-    margin: 10px auto 10px auto;
-    max-width: 100%;
-    display: block;
-  }
-
-  pre, code {
-    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    background-color: #f7f7f7;
-  }
-
-  code {
-    font-size: 12px;
-    padding: 4px;
-  }
-
-  pre {
-    margin-top: 0;
-    margin-bottom: 16px;
-    word-wrap: normal;
-    padding: 16px;
-    overflow: auto;
-    font-size: 85%;
-    line-height: 1.45;
-  }
-
-  pre>code {
-    padding: 0;
-    margin: 0;
-    font-size: 100%;
-    word-break: normal;
-    white-space: pre;
-    background: transparent;
-    border: 0;
-  }
-
-  pre code {
-    display: inline;
-    max-width: auto;
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-    line-height: inherit;
-    word-wrap: normal;
-    background-color: transparent;
-    border: 0;
-  }
-
-  pre code::before,
-  pre code::after {
-    content: normal;
-  }
-
-  em,q,em,dfn {
-    font-style:italic;
-  }
-
-  .sans,html .gist .gist-file .gist-meta {
-    font-family:"Open Sans","Myriad Pro",Myriad,sans-serif;
-  }
-
-  .mono,pre,code,tt,p code,li code {
-    font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
-  }
-
-  .heading,.serif,h1,h2,h3 {
-    font-family:"Old Standard TT",serif;
-  }
-
-  strong {
-    font-weight:600;
-  }
-
-  q:before {
-    content:"\201C";
-  }
-
-  q:after {
-    content:"\201D";
-  }
-
-  del,s {
-    text-decoration:line-through;
-  }
-
-  blockquote {
-    font-family:"Old Standard TT",serif;
-    text-align:center;
-    padding:50px;
-  }
-
-  blockquote p {
-    display:inline-block;
-    font-style:italic;
-  }
-
-  blockquote:before,blockquote:after {
-    font-family:"Old Standard TT",serif;
-    content:'\201C';
-    font-size:35px;
-    color:#403c3b;
-  }
-
-  blockquote:after {
-    content:'\201D';
-  }
-
-  hr {
-    width:40%;
-    height: 1px;
-    background:#403c3b;
-    margin: 25px auto;
-  }
-
-  h1 {
-    font-size:35px;
-  }
-
-  h2 {
-    font-size:28px;
-  }
-
-  h3 {
-    font-size:22px;
-    margin-top:18px;
-  }
-
-  h1 a,h2 a,h3 a {
-    text-decoration:none;
-  }
-
-  h1,h2 {
-    margin-top:28px;
-  }
-
-  #sub-header, time {
-    color:#403c3b;
-    font-size:13px;
-  }
-
-  #sub-header {
-    margin: 0 4px;
-  }
-
-  #nav h1 a {
-    font-size:35px;
-    color:#1d1313;
-    line-height:120%;
-  }
-
-  .posts_listing a,#nav a {
-    text-decoration: none;
-  }
-
-  li {
-    margin-left: 20px;
-  }
-
-  ul li {
-    margin-left: 5px;
-  }
-
-  ul li {
-    list-style-type: none;
-  }
-  ul li:before {
-    content:"\00BB \0020";
-  }
-
-  #nav ul li:before, .posts_listing li:before {
-    content:'';
-    margin-right:0;
-  }
-
-  #content {
-    text-align:left;
-    width:100%;
-    font-size:15px;
-    padding:60px 0 80px;
-  }
-
-  #content h1,#content h2 {
-    margin-bottom:5px;
-  }
-
-  #content h2 {
-    font-size:25px;
-  }
-
-  #content .entry-content {
-    margin-top:15px;
-  }
-
-  #content time {
-    margin-left:3px;
-  }
-
-  #content h1 {
-    font-size:30px;
-  }
-
-  .highlight {
-    margin: 10px 0;
-  }
-
-  .posts_listing {
-    margin:0 0 50px;
-  }
-
-  .posts_listing li {
-    margin:0 0 25px 15px;
-  }
-
-  .posts_listing li a:hover,#nav a:hover {
-    text-decoration: underline;
-  }
-
-  #nav {
-    text-align:center;
-    position:static;
-    margin-top:60px;
-  }
-
-  #nav ul {
-    display: table;
-    margin: 8px auto 0 auto;
-  }
-
-  #nav li {
-    list-style-type:none;
-    display:table-cell;
-    font-size:15px;
-    padding: 0 20px;
-  }
-
-  #links {
-    margin: 50px 0 0 0;
-  }
-
-  #links :nth-child(2) {
-    float:right;
-  }
-
-  #not-found {
-    text-align: center;
-  }
-
-  #not-found a {
-    font-family:"Old Standard TT",serif;
-    font-size: 200px;
-    text-decoration: none;
-    display: inline-block;
-    padding-top: 225px;
-  }
-
-  @media (max-width: 750px) {
-    body {
-      padding-left:20px;
-      padding-right:20px;
-    }
-
-    #nav h1 a {
-      font-size:28px;
-    }
-
-    #nav li {
-      font-size:13px;
-      padding: 0 15px;
-    }
-
-    #content {
-      margin-top:0;
-      padding-top:50px;
-      font-size:14px;
-    }
-
-    #content h1 {
-      font-size:25px;
-    }
-
-    #content h2 {
-      font-size:22px;
-    }
-
-    .posts_listing li div {
-      font-size:12px;
-    }
-  }
-
-  @media (max-width: 400px) {
-    body {
-      padding-left:20px;
-      padding-right:20px;
-    }
-
-    #nav h1 a {
-      font-size:22px;
-    }
-
-    #nav li {
-      font-size:12px;
-      padding: 0 10px;
-    }
-
-    #content {
-      margin-top:0;
-      padding-top:20px;
-      font-size:12px;
-    }
-
-    #content h1 {
-      font-size:20px;
-    }
-
-    #content h2 {
-      font-size:18px;
-    }
-
-    .posts_listing li div{
-      font-size:12px;
-    }
-  }
-</style>
-
-
-    <link rel="shortcut icon" href="http://rms1000watt.github.io/favicon.ico">
-
-    
-  </head>
-
-  <body>
-    <section id=nav>
-      <h1><a href="http://rms1000watt.github.io/">rms1000watt</a></h1>
-      <ul>
-        
-          <li><a href="http://rms1000watt.github.io/about">About</a></li>
-        
-          <li><a href="https://gist.github.com/rms1000watt">Gists</a></li>
-        
-          <li><a href="https://github.com/rms1000watt">Github</a></li>
-        
-          <li><a href="https://linkedin.com/in/ryanmatthewsmith">Linkedin</a></li>
-        
-      </ul>
-    </section>
-
-
-<section id=content>
-  <h1> Awesome Everything </h1>
-
-  <div id=sub-header>
-    January 2020 · 1 minute read
-  </div>
-
-  <div class="entry-content">
-    
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="rms1000watt">
+		<meta name="description" content="Mostly Software Engineering">
+		<meta name="generator" content="Hugo 0.18.1" />
+		<title>Awesome Everything &middot; rms1000watt</title>
+		<link rel="shortcut icon" href="http://rms1000watt.github.ioimages/favicon.ico">
+		<link rel="stylesheet" href="http://rms1000watt.github.iocss/style.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-light.min.css">
+		
+
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://rms1000watt.github.io'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://rms1000watt.github.iopost'>Archive</a>
+	
+
+	
+
+	
+		<a href='http://rms1000watt.github.ioabout'>About</a>
+	
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        
+                            Awesome Everything
+                        
+                    </h1>
+                    <h2 class="headline">
+                    Jan 22, 2017 07:11
+                    · 156 words
+                    · 1 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
 
 <h1 id="curated-list-of-everything-awesome">Curated List of Everything Awesome</h1>
 
@@ -423,9 +79,11 @@
 <li>Security</li>
 </ul>
 
+<p><br/></p>
+
 <h2 id="golang">Golang</h2>
 
-<h3 id="introduction">Introduction</h3>
+<h4 id="introduction">Introduction</h4>
 
 <ul>
 <li><a href="https://gobyexample.com/">Go By Example</a></li>
@@ -433,66 +91,76 @@
 <li><a href="https://dave.cheney.net/resources-for-new-go-programmers">Dave Cheney&rsquo;s Guide</a></li>
 </ul>
 
-<h3 id="tutorials">Tutorials</h3>
+<h4 id="tutorials">Tutorials</h4>
 
 <ul>
 <li><a href="https://blog.codeship.com/building-minimal-docker-containers-for-go-applications/">Go with Docker from Scratch</a></li>
 </ul>
 
-<h3 id="awesomego">AwesomeGo</h3>
+<h4 id="awesomego">AwesomeGo</h4>
 
 <ul>
 <li><a href="http://awesome-go.com/">Awesome Go</a></li>
 <li><a href="https://github.com/kardianos/govendor">GoVendor</a></li>
 </ul>
 
+<p><br/></p>
+
 <h2 id="python">Python</h2>
 
-<h3 id="tutorials-1">Tutorials</h3>
+<h4 id="tutorials-1">Tutorials</h4>
 
 <ul>
 <li><a href="http://fabacademy.org/archives/2015/doc/WebSocketConsole.html">Multiprocessing with Websockets</a></li>
 </ul>
 
-<h3 id="servers">Servers</h3>
+<h4 id="servers">Servers</h4>
 
 <ul>
 <li><a href="http://www.tornadoweb.org/en/stable/">Tornado Web</a></li>
 </ul>
 
+<p><br/></p>
+
 <h2 id="c">C</h2>
 
-<h3 id="servers-1">Servers</h3>
+<h4 id="servers-1">Servers</h4>
 
 <ul>
 <li><a href="https://github.com/lpereira/lwan">Lwan</a></li>
 </ul>
 
+<p><br/></p>
+
 <h2 id="c-1">C++</h2>
 
-<h3 id="tutorials-2">Tutorials</h3>
+<h4 id="tutorials-2">Tutorials</h4>
 
 <ul>
 <li><a href="http://mrbook.org/blog/tutorials/make/">Makefiles</a></li>
 </ul>
 
+<p><br/></p>
+
 <h2 id="reactjs">ReactJS</h2>
 
-<h3 id="tutorials-3">Tutorials</h3>
+<h4 id="tutorials-3">Tutorials</h4>
 
 <ul>
 <li><a href="http://tutorials.pluralsight.com/interesting-apis/building-a-real-time-application-with-react-react-router-horizon-io-and-oauth">React + Horizon.io (with OAuth example)</a></li>
 </ul>
 
+<p><br/></p>
+
 <h2 id="html">HTML</h2>
 
-<h3 id="templates">Templates</h3>
+<h4 id="templates">Templates</h4>
 
 <ul>
 <li><a href="https://html5up.net/">HTML5 Up</a></li>
 </ul>
 
-<h3 id="generators">Generators</h3>
+<h4 id="generators">Generators</h4>
 
 <ul>
 <li><a href="http://www.mkdocs.org/">MkDocs</a></li>
@@ -500,56 +168,62 @@
 <li><a href="https://gohugo.io/">Hugo</a></li>
 </ul>
 
-<h3 id="assets">Assets</h3>
+<h4 id="assets">Assets</h4>
 
 <ul>
 <li><a href="https://unsplash.com/">Unsplash</a></li>
 </ul>
 
-<h3 id="css">CSS</h3>
+<h4 id="css">CSS</h4>
 
 <ul>
 <li><a href="http://flexboxgrid.com/">Flexbox grids</a></li>
 <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox</a></li>
 </ul>
 
+<p><br/></p>
+
 <h2 id="serialization">Serialization</h2>
 
-<h3 id="yaml">YAML</h3>
+<h4 id="yaml">YAML</h4>
 
 <ul>
 <li><a href="http://www.yaml.org/start.html">http://www.yaml.org/start.html</a></li>
 </ul>
 
-<h3 id="protobuf">Protobuf</h3>
+<h4 id="protobuf">Protobuf</h4>
 
 <ul>
 <li><a href="https://developers.google.com/protocol-buffers/">https://developers.google.com/protocol-buffers/</a></li>
 </ul>
 
-<h3 id="flatbuf">Flatbuf</h3>
+<h4 id="flatbuf">Flatbuf</h4>
 
 <ul>
 <li><a href="https://google.github.io/flatbuffers/">https://google.github.io/flatbuffers/</a></li>
 </ul>
 
-<h3 id="json">JSON</h3>
+<h4 id="json">JSON</h4>
 
 <ul>
 <li><a href="http://www.json.org/">http://www.json.org/</a></li>
 </ul>
 
+<p><br/></p>
+
 <h2 id="aws">AWS</h2>
 
-<h3 id="tutorials-4">Tutorials</h3>
+<h4 id="tutorials-4">Tutorials</h4>
 
 <ul>
 <li><a href="https://github.com/awslabs/serverless-application-model/tree/master/examples">SAM Examples</a></li>
 </ul>
 
+<p><br/></p>
+
 <h2 id="security">Security</h2>
 
-<h3 id="blogs">Blogs</h3>
+<h4 id="blogs">Blogs</h4>
 
 <ul>
 <li><a href="https://samy.pl/">Samy Kamkar</a></li>
@@ -557,7 +231,7 @@
 <li><a href="https://thehackerblog.com/">Mandatory Programmer</a></li>
 </ul>
 
-<h3 id="hardware">Hardware</h3>
+<h4 id="hardware">Hardware</h4>
 
 <ul>
 <li><a href="https://github.com/ecthros/pina-colada">Piña Colada (WiFi Pinapple 4 RPI)</a></li>
@@ -567,7 +241,7 @@
 <li><a href="https://www.wifipineapple.com/">Wifi Pineapple</a></li>
 </ul>
 
-<h3 id="software">Software</h3>
+<h4 id="software">Software</h4>
 
 <ul>
 <li><a href="https://testssl.sh/">TestSSL</a></li>
@@ -578,13 +252,13 @@
 <li><a href="https://getlantern.org/">Lantern</a></li>
 </ul>
 
-<h3 id="services">Services</h3>
+<h4 id="services">Services</h4>
 
 <ul>
 <li><a href="https://www.privateinternetaccess.com">VPN Private Internet Access</a></li>
 </ul>
 
-<h3 id="videos">Videos</h3>
+<h4 id="videos">Videos</h4>
 
 <ul>
 <li><a href="https://www.youtube.com/watch?v=RsksLgmwNzA">Defcon 21 - The Bluetooth Device Database</a></li>
@@ -592,20 +266,87 @@
 <li><a href="https://www.youtube.com/watch?v=00A36VABIA4">Defcon 24 - Marc Newlin - MouseJack: Injecting Keystrokes into Wireless Mice</a></li>
 </ul>
 
-  </div>
+                </section>
+            </article>
 
-  <div id=links>
-    
-      <a class="basic-alignment left" href="http://rms1000watt.github.io/post/what-is-grpc/">&laquo; What is gRPC?</a>
-    
-    
-  </div>
-</section>
+            
 
-  </div>
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rms1000watt'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="http://gist.github.com/rms1000watt">
+        <i class="fa fa-github-alt"></i>
+    </a>
+    
+    <a class="symbol" href="http://www.github.com/rms1000watt">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="http://www.linkedin.com/in/ryanmatthewsmith">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2017 <i class="fa fa-heart" aria-hidden="true"></i> rms1000watt
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="http://nodejh.com">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="http://rms1000watt.github.iojs/main.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
   
-</body>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-92611586-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+    </body>
 </html>
-
-
-
