@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "rms1000watt"
-baseurl = "//rms1000watt.github.io/"
+baseurl = "https//rms1000watt.github.io/"
 author = "Ryan Smith"
 canonifyurls = true
 theme = "hugo-theme-cactus-plus"

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on rms1000watt</title>
-    <link>//rms1000watt.github.io/post/index.xml</link>
+    <link>/https/rms1000watt.github.io/post/index.xml</link>
     <description>Recent content in Posts on rms1000watt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 23 Feb 2017 07:11:58 -0800</lastBuildDate>
-    <atom:link href="//rms1000watt.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/https/rms1000watt.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>What is gRPC?</title>
-      <link>//rms1000watt.github.io/post/what-is-grpc/</link>
+      <link>/https/rms1000watt.github.io/post/what-is-grpc/</link>
       <pubDate>Thu, 23 Feb 2017 07:11:58 -0800</pubDate>
       
-      <guid>//rms1000watt.github.io/post/what-is-grpc/</guid>
+      <guid>/https/rms1000watt.github.io/post/what-is-grpc/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!&lt;/strong&gt;&lt;/p&gt;
@@ -99,10 +99,10 @@ But, I do hate to talk your ear off. You&amp;rsquo;ll learn a lot better by just
     
     <item>
       <title>OpenSSL in Go</title>
-      <link>//rms1000watt.github.io/post/openssl-in-go/</link>
+      <link>/https/rms1000watt.github.io/post/openssl-in-go/</link>
       <pubDate>Wed, 22 Feb 2017 07:11:58 -0800</pubDate>
       
-      <guid>//rms1000watt.github.io/post/openssl-in-go/</guid>
+      <guid>/https/rms1000watt.github.io/post/openssl-in-go/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Food for thought: What if you wanted to use Go AND meet compliance requirements?&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Golang devs have specifically mentioned that some compliance requirements are not planned to be incorporated into the code base &lt;a href=&#34;https://groups.google.com/forum/#!topic/golang-nuts/xnjCdW8HaOE&#34;&gt;as seen here&lt;/a&gt;.&lt;/p&gt;
@@ -123,10 +123,10 @@ go run openssl-go-project.go
     
     <item>
       <title>Awesome Everything</title>
-      <link>//rms1000watt.github.io/post/awesome-everything/</link>
+      <link>/https/rms1000watt.github.io/post/awesome-everything/</link>
       <pubDate>Sun, 22 Jan 2017 07:11:58 -0800</pubDate>
       
-      <guid>//rms1000watt.github.io/post/awesome-everything/</guid>
+      <guid>/https/rms1000watt.github.io/post/awesome-everything/</guid>
       <description>
 
 &lt;h1 id=&#34;curated-list-of-everything-awesome&#34;&gt;Curated List of Everything Awesome&lt;/h1&gt;
