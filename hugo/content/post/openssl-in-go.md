@@ -1,7 +1,8 @@
 +++
 date = "2017-02-22T7:11:58-08:00"
 title = "OpenSSL in Go"
-
+description = "What if you wanted to use Go AND meet compliance requirements? Help me out!"
+tags = ["Golang", "OpenSSL", "Compliance"]
 +++
 
 **Food for thought: What if you wanted to use Go AND meet compliance requirements?**

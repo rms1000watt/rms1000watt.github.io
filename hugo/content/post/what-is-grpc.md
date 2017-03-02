@@ -1,7 +1,8 @@
 +++
 date = "2017-02-23T7:11:58-08:00"
 title = "What is gRPC?"
-
+description = "An explanation of gRPC to help you get past the learning curve."
+tags = ["Golang", "Google", "gRPC", "HTTP2", "RPC", "Protobuf"]
 +++
 
 **TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!**

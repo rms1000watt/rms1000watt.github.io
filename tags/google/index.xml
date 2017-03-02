@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google on rms1000watt</title>
+    <link>https://rms1000watt.github.io/tags/google/index.xml</link>
+    <description>Recent content in Google on rms1000watt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://rms1000watt.github.io/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>What is gRPC?</title>
+      <link>https://rms1000watt.github.io/post/what-is-grpc/</link>
+      <pubDate>Thu, 23 Feb 2017 07:11:58 -0800</pubDate>
+      
+      <guid>https://rms1000watt.github.io/post/what-is-grpc/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://grpc.io&#34;&gt;gRPC&lt;/a&gt; is Google&amp;rsquo;s &amp;ldquo;&amp;hellip;high performance, open-source universal RPC framework.&amp;rdquo; Which doesn&amp;rsquo;t really mean anything to the newcomer. To help you understand what this actually means, let&amp;rsquo;s look at what you&amp;rsquo;re already used to REST API and compare it gRPC.&lt;/p&gt;
+
+&lt;p&gt;What you&amp;rsquo;re used to&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;REST API = HTTP1.1 + REST + JSON
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;gRPC&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gRPC = Google + RPC Framework
+gRPC = Google + (HTTP2 + Remote Procedure Call + Protobuf)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Going further to explain the differences between the two&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;http2&#34;&gt;HTTP2&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP/2&#34;&gt;HTTP2&lt;/a&gt; is the next generation, WWW protocol following HTTP1.1. The big takeaway in relation to gRPC is the full duplex communication across a single connection, which is one reason why it&amp;rsquo;s coined &amp;ldquo;high performance.&amp;rdquo; Put another way, with 1 connection between server and client, data can be transferred in both directions concurrently.&lt;/p&gt;
+
+&lt;p&gt;Another cool side effect of HTTP2 is it requires a TLS connection. This doesn&amp;rsquo;t mean your connection is Always secure, it means IFF you provide a secure connection then you can use HTTP2. Please checkout the Wikipedia article for more information regarding HTTP2.&lt;/p&gt;
+
+&lt;h2 id=&#34;remote-procedure-call&#34;&gt;Remote Procedure Call&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Remote_procedure_call&#34;&gt;Remote Procedure Call&lt;/a&gt; or RPC is when &amp;ldquo;&amp;hellip;a computer program causes a procedure (subroutine) to execute in another address space (commonly on another computer on a shared network), which is coded as if it were a normal (local) procedure call, without the programmer explicitly coding the details for the remote interaction.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;WOW! Groundbreaking!&lt;/p&gt;
+
+&lt;p&gt;No, not really. You&amp;rsquo;re used to doing this with your REST API server/clients. You&amp;rsquo;re executing code on another computer without explicitly coding the commands on the remote computer. Put another way, you (the client) is telling a remote computer (the server) to do something; you don&amp;rsquo;t care how it gets done just as long as you get a proper response back. Don&amp;rsquo;t forget, you&amp;rsquo;re using Layer 7 HTTP to make the communication in both cases (REST &amp;amp; RPC).&lt;/p&gt;
+
+&lt;p&gt;But the difference between REST and RPC is essentially how you&amp;rsquo;re exposing your server&amp;rsquo;s endpoints. For example, a REST server might only provide strict CRUD operations against an object, while an RPC server could provide more general computation functionalities such as &lt;code&gt;genHash()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;protobuf&#34;&gt;Protobuf&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;Protocol Buffers&lt;/a&gt; or Protobufs are one of Google&amp;rsquo;s serialization structures. If you&amp;rsquo;re comfortable with JSON or XML, then consider Protobufs in the same class as these. However, the magic power of Protobufs is the &lt;code&gt;.pb&lt;/code&gt; file. This file defines the structure (or dare I say schema) of your data. Then a Protobuf Compilier is used to actually generate the data structure in the language of your choosing. Therefore, you can define a data structure once and use it across all your languages.&lt;/p&gt;
+
+&lt;p&gt;Example Protobuf definition:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;message Person {
+  required string name = 1;
+  required int32 id = 2;
+  optional string email = 3;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;the-culmination-of-grpc&#34;&gt;The Culmination of gRPC&lt;/h2&gt;
+
+&lt;p&gt;gRPC takes this one step further by adding &lt;code&gt;Services&lt;/code&gt; to the Protobuf definition file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string greeting = 1;
+}
+
+message HelloResponse {
+  string reply = 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By using a gRPC plugin for the Protobuf Compilier, the compilier will also generate server/client code for any language of your chosing.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;re used to REST APIs where HTTP1.1, REST, and JSON are used, consider gRPC as the next generation&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTTP1.1 =&amp;gt; HTTP2&lt;/li&gt;
+&lt;li&gt;REST =&amp;gt; RPC&lt;/li&gt;
+&lt;li&gt;JSON =&amp;gt; Protobuf&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;
+But, I do hate to talk your ear off. You&amp;rsquo;ll learn a lot better by just playing with the actual tools. I can say I&amp;rsquo;ve used gRPC in the proper setting and it has lived up to the hype. So, go follow the &lt;a href=&#34;http://www.grpc.io/docs/quickstart/&#34;&gt;gRPC tutorials&lt;/a&gt; for your language of choice and get to playing!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

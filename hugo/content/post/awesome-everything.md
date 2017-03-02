@@ -1,6 +1,8 @@
 +++
 date = "2017-01-22T7:11:58-08:00"
 title = "Awesome Everything"
+description = "A nowhere near exhaustive list of everything awesome! Golang, Python, C, C++, ReactJS, HTML, Serialization, AWS, and Security."
+tags = ["Golang", "Python", "C", "C++", "ReactJS", "HTML", "Serialization", "AWS", "Security"]
 
 +++
 
