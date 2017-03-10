@@ -5,7 +5,7 @@ description = "Fresh Installation of Golang and Dev Environment in OS X. Hello W
 tags = ["Golang", "VS Code", "OS X", "Installation"]
 +++
 
-This guide will help you install Golang and some useful developer tools in your fresh OS X instance. And give you a Hello World example at the end!
+This guide will help you install Golang and some useful developer tools in your fresh OS X instance. And there is a Hello World example at the end!
 
 Installations include:
 
