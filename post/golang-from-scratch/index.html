@@ -1,0 +1,323 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="rms1000watt">
+		<meta name="description" content="Mostly Software Engineering">
+		<meta name="generator" content="Hugo 0.19" />
+		<title>Golang Env from Scratch &middot; rms1000watt</title>
+		<link rel="shortcut icon" href="https://rms1000watt.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://rms1000watt.github.io/css/style.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-light.min.css">
+		
+
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://rms1000watt.github.io/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='https://rms1000watt.github.io/post'>Archive</a>
+	
+
+	
+
+	
+		<a href='https://rms1000watt.github.io/about'>About</a>
+	
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        
+                            Golang Env from Scratch
+                        
+                    </h1>
+                    <h2 class="headline">
+                    Mar 10, 2017 08:00
+                    · 756 words
+                    · 4 minutes read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://rms1000watt.github.io/tags/golang">Golang</a>
+                          
+                              <a href="https://rms1000watt.github.io/tags/vs-code">VS Code</a>
+                          
+                              <a href="https://rms1000watt.github.io/tags/os-x">OS X</a>
+                          
+                              <a href="https://rms1000watt.github.io/tags/installation">Installation</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>This guide will help you install Golang and some useful developer tools in your fresh OS X instance. And give you a Hello World example at the end!</p>
+
+<p>Installations include:</p>
+
+<ul>
+<li>Homebrew</li>
+<li>Golang</li>
+<li>Zsh (with Oh My Zsh)</li>
+<li>Terminal.app Options</li>
+<li>Visual Studio Code (with plugins)</li>
+</ul>
+
+<p><br></p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Find and open the Terminal app in OS X. Run these commands.</p>
+
+<p>(The code blocks below will have comments in them which start with a <code>#</code> but you should be able to copy and paste the whole code block into the Terminal.)</p>
+
+<h3 id="install-homebrew">Install Homebrew</h3>
+
+<p>Install <a href="https://brew.sh/">Homebrew</a> and some useful packages with it.</p>
+
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+
+# Install git (again?) so it has features like `gitk`
+brew install git
+
+# Install wget since it's a nice tool
+brew install wget
+</code></pre>
+
+<h3 id="install-golang">Install Golang</h3>
+
+<p>This will install Golang and some necessary libraries for your Visual Studio Code environment to work. While the <a href="https://golang.org/doc/install">Golang installation steps</a> are complete, they&rsquo;re not obvious to newcomers. Here are explicit steps to actually have a working system.</p>
+
+<pre><code># Fetch the latest zipped Golang distro from their servers
+wget https://storage.googleapis.com/golang/go1.8.darwin-amd64.tar.gz 
+
+# Unzip the distro to `/usr/local/go`
+sudo tar -C /usr/local -xzf go1.8.darwin-amd64.tar.gz
+
+# Remove the latest zipped Golang distro from your system (the unzipped items will remain)
+rm go1.8.darwin-amd64.tar.gz
+
+# 'Symbolic Link' the Golang binaries to a path your system can find them.
+# This lets you do things like executing `go run` in the terminal.
+ln -s /usr/local/go/bin/go /usr/local/bin/go
+ln -s /usr/local/go/bin/godoc /usr/local/bin/godoc
+ln -s /usr/local/go/bin/gofmt /usr/local/bin/gofmt
+
+# Make the default `GOPATH` directory which ends up at `/Users/ryan/go`
+mkdir ~/go
+
+# Install some golang libraries that will be needed later for Visual Studio Code
+go get -v github.com/rogpeppe/godef
+go get -v github.com/golang/lint/golint
+go get -v github.com/tpng/gopkgs
+go get -v github.com/lukehoban/go-outline
+go get -v github.com/nsf/gocode
+go get -v golang.org/x/tools/cmd/goimports
+</code></pre>
+
+<h3 id="install-configure-zsh">Install &amp; Configure Zsh</h3>
+
+<p><a href="http://www.zsh.org/">Zsh</a> is another shell program with cool features, plugins, and community.</p>
+
+<pre><code># Install zsh
+brew install zsh
+
+# Add `/usr/local/bin/zsh` at bottom of /etc/shells
+sudo echo '/usr/local/bin/zsh' &gt;&gt; /etc/shells 
+
+# Change shell to zsh in your system
+chsh -s /usr/local/bin/zsh
+
+# Install Oh My Zsh which will configure zsh for your system
+sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;
+</code></pre>
+
+<h3 id="configure-terminal">Configure Terminal</h3>
+
+<p>My only beef with default Terminal is the default theme. Here is how to change it.</p>
+
+<p><strong>Update Terminal to use a dark theme</strong></p>
+
+<ul>
+<li>Open a new Terminal and go to <code>Preferences</code></li>
+<li>Select the <code>Profiles</code> tab</li>
+<li>Select the <code>Pro</code> theme on the left</li>
+<li>Set as default</li>
+</ul>
+
+<p><br>
+<strong>Fix background opacity and color</strong></p>
+
+<ul>
+<li>In the <code>Profiles</code> tab in the <code>Text</code> tab under the <code>Background</code> section, click the black square next to <code>Color &amp; Effects</code></li>
+<li>Adjust the opacity setting to 100%</li>
+<li>Click the next tab with the sliders</li>
+<li>In the dropdown that says <code>Gray Scale Slider</code> select <code>RGB Sliders</code> and set RGB to 30, 30, 30</li>
+<li>Close this screen</li>
+</ul>
+
+<p><br>
+<strong>Fix text boldness</strong></p>
+
+<ul>
+<li>In the <code>Profiles</code> tab in the <code>Text</code> tab under the <code>Text</code> section, depress the <code>Use bold fonts</code> setting</li>
+<li>Exit Terminal completely</li>
+</ul>
+
+<p><br></p>
+
+<h3 id="download-configure-visual-studio-code">Download &amp; Configure Visual Studio Code</h3>
+
+<p>Download <a href="https://code.visualstudio.com/">Visual Studio Code</a> (VS Code), open it, and drag that sucker to your <code>Applications</code> directory. Open Visual Studio Code.</p>
+
+<p>Press <code>cmd</code> + <code>shift</code> + <code>x</code> to open the Extensions side menu (the bottommost icon on the left). Do a search for <code>go luke</code>. The item at the top of the search results should be an extension named <code>Go</code> authored by <code>lukehoban</code>. Install that. Then you should be asked to restart VS Code; do it.</p>
+
+<p>When VS Code restarts, press <code>cmd</code> + <code>,</code> to show the <code>settings.json</code> files. Paste this JSON into the &lsquo;User Settings&rsquo; on the right of the screen.</p>
+
+<pre><code>// Place your settings in this file to overwrite the default settings
+{
+    &quot;go.formatTool&quot;: &quot;goimports&quot;,
+    &quot;workbench.iconTheme&quot;: null,
+    &quot;terminal.integrated.shell.osx&quot;: &quot;/usr/local/bin/zsh&quot;,
+    &quot;workbench.welcome.enabled&quot;: false
+}
+</code></pre>
+
+<p>You might have to restart VS Code after saving these changes. You can now view the Integrated Terminal with Zsh by pressing <code>ctrl</code> + <code>(backtick)</code>.</p>
+
+<h2 id="hello-world">Hello World</h2>
+
+<p>Open a new VS Code window. Open a new VS Code file. Paste this code into the window.</p>
+
+<pre><code>package main
+
+import (
+	&quot;fmt&quot;
+)
+
+func main() {
+	fmt.Println(&quot;hello world!&quot;)
+}
+
+</code></pre>
+
+<p>Save this code to your Desktop and name it <code>main.go</code>. Open your Integrated Terminal <code>ctrl</code> + <code>(backtick)</code>. In the Integrated Terminal, run these commands:</p>
+
+<pre><code>cd ~/Desktop
+go run main.go
+</code></pre>
+
+<p>You should see the output from your code above!</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Using these steps, you should now have your OS X environment setup to begin developing in Golang. I&rsquo;ll add some screenshots soon. Please comment if certain steps are broken or just lame&ndash;I can fix them as per your suggestions. Have fun coding!</p>
+
+                </section>
+            </article>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rms1000watt'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="http://gist.github.com/rms1000watt">
+        <i class="fa fa-github-alt"></i>
+    </a>
+    
+    <a class="symbol" href="http://www.github.com/rms1000watt">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="http://www.linkedin.com/in/ryanmatthewsmith">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2017 <i class="fa fa-heart" aria-hidden="true"></i> rms1000watt
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="http://nodejh.com">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://rms1000watt.github.io/js/main.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-92611586-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+    </body>
+</html>
