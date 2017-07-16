@@ -7,7 +7,7 @@
 		<meta name="author" content="rms1000watt">
 		<meta name="description" content="Mostly Software Engineering">
 		<meta name="generator" content="Hugo 0.19" />
-		<title>OpenSSL in Go &middot; rms1000watt</title>
+		<title>Analytics Cheat Sheet &middot; rms1000watt</title>
 		<link rel="shortcut icon" href="https://rms1000watt.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://rms1000watt.github.io/css/style.css">
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-light.min.css">
@@ -64,22 +64,18 @@
                 <header>
                     <h1>
                         
-                            OpenSSL in Go
+                            Analytics Cheat Sheet
                         
                     </h1>
                     <h2 class="headline">
-                    Feb 22, 2017 07:11
-                    · 101 words
-                    · 1 minute read
+                    Jul 15, 2017 08:30
+                    · 389 words
+                    · 2 minutes read
                       <span class="tags">
                       
                       
                           
-                              <a href="https://rms1000watt.github.io/tags/golang">Golang</a>
-                          
-                              <a href="https://rms1000watt.github.io/tags/openssl">OpenSSL</a>
-                          
-                              <a href="https://rms1000watt.github.io/tags/compliance">Compliance</a>
+                              <a href="https://rms1000watt.github.io/tags/analytics">Analytics</a>
                           
                       
                       
@@ -87,21 +83,97 @@
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p><strong>Food for thought: What if you wanted to use Go AND meet compliance requirements?</strong></p>
+                    
 
-<p>Golang devs have specifically mentioned that some compliance requirements are not planned to be incorporated into the code base <a href="https://groups.google.com/forum/#!topic/golang-nuts/xnjCdW8HaOE">as seen here</a>.</p>
+<h4 id="linear-vs-nonlinear">Linear vs Nonlinear</h4>
 
-<p>So, an open question to the community: can anyone provide a working implementation of OpenSSL in Go for server/client that works out of the box? For instance, is there a project where I could&hellip;</p>
+<p>Linear if:</p>
 
-<pre><code>go get -u -v your/openssl-go/project
-go run openssl-go-project.go
-</code></pre>
+<p>$$f(x + y) = f(x) + f(y)$$
+$$f(\alpha x) = \alpha f(x)$$</p>
 
-<p>&hellip; without a hitch?</p>
+<h4 id="linear-algebra">Linear Algebra</h4>
 
-<p>Even using the exact steps defined at <a href="https://godoc.org/github.com/spacemonkeygo/openssl">SpaceMonkeyGo</a> didn&rsquo;t yield positive results.</p>
+<h5 id="dot-product">Dot Product</h5>
 
-<p>Let me know what else is known!</p>
+<div>$$\vec{a}\cdot\vec{b} = a_{1}b_{1} + a_{2}b_{2} + ... = |\vec{a}||\vec{b}|\cos{\theta} $$</div>
+
+<h5 id="projection">Projection</h5>
+
+<p>The projection of $\vec{b}$ onto $\vec{a}$ is:</p>
+
+<div>$$ proj_{\vec{a}}\vec{b} = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^2}\vec{a} $$</div>
+
+<h5 id="orthogonal-matrix">Orthogonal Matrix</h5>
+
+<p>A matrix $Q$ is orthogonal if:</p>
+
+<div>$$Q^T Q = Q Q^T = I$$</div>
+
+<p>Therefore, a matrix $Q$ is orthogonal if:</p>
+
+<div>$$Q^T = Q^{-1}$$</div>
+
+<h5 id="jacobian">Jacobian</h5>
+
+<div>$$ \mathbf J_{ij} = \frac{\partial f_{i}}{\partial x_{j}} =  \begin{bmatrix} 
+\frac{\partial f_{1}}{\partial x} & \frac{\partial f_{1}}{\partial y}  \\
+\frac{\partial f_{2}}{\partial x} & \frac{\partial f_{2}}{\partial y} \\
+\end{bmatrix}$$</div>
+
+<h6 id="example">Example</h6>
+
+<div>$$ \mathbf f(x,y) = \begin{bmatrix} 
+x^2 y \\
+5x + \sin{y} \\
+\end{bmatrix}$$</div>
+
+<div>$$
+\mathbf J  = \begin{bmatrix} 
+2xy & x^2  \\
+5 & \cos{y} \\
+\end{bmatrix}
+$$</div>
+
+<h4 id="linear-regression">Linear Regression</h4>
+
+<p>Can use Least Squares with <a href="https://en.wikipedia.org/wiki/QR_decomposition">QR Decomposition</a>. As seen in <a href="https://github.com/sajari/regression/blob/master/regression.go#L162-L176">this project</a>.</p>
+
+<h4 id="nonlinear-regression">Nonlinear Regression</h4>
+
+<p>Can use Ordinary Least Squares (OLS) or Weighted Least Squares when observations are not equally reliable.</p>
+
+<h4 id="nonlinear-least-squares">Nonlinear Least Squares</h4>
+
+<p>Given a set of data points $(x_{1},y_{1}), (x_{2},y_{2}), &hellip;, (x_{m},y_{m})  $ and a model function $f(x,\beta)$ that depends on $\beta = (\beta_{1}, \beta_{2}, &hellip;, \beta_{n})$ with $m \ge n$ minimize the sum of squares (minimize residuals) $S$:</p>
+
+<div>$$ S = \sum_{i=1}^m r_{i}^2$$</div>
+
+<p>where $r$ is the residual</p>
+
+<div>$$r_{i} = y_{i} - f(x_{i}, \beta_{j})$$</div>
+
+<p>by finding the minimum of $S$ (by setting the gradient equal to 0)</p>
+
+<div>$$ \frac{\partial S}{\partial \beta_{j}} = 2 \sum_{i} r_{i} \frac{\partial r_{i}}{\partial \beta_{j}} = 0 $$</div> 
+
+<p>for $j = 1, 2, &hellip; n$. Since this does not have an analytical solution, an initial value for $\beta$ must be chosen then iteratively refined:</p>
+
+<div>$$ \beta_{j} \approx \beta_{j}^{k+1} = \beta_{j}^{k} + \Delta\beta_{j} $$</div>
+
+<p>for $k$ iterations until sufficiently refined. Continue to follow the <a href="https://en.wikipedia.org/wiki/Non-linear_least_squares">proof</a> and get a forumlation in matrix notation for nonlinear least squares:</p>
+
+<div>$$ (\mathbf J^T \mathbf J) \mathbf\Delta \mathbf\beta = \mathbf J^T \mathbf\Delta \mathbf y $$</div>
+
+<p>where $\mathbf J$ is the Jacobian.</p>
+
+<h4 id="least-squares-considerations">Least Squares Considerations</h4>
+
+<p>The goal is to minimize the residuals by setting the gradient equal to 0 (finding the minimum of a curve along a dimension). However, for polynomials with degree 2 and higher or many other functions, multiple minima can exist. Loosely speaking, if the refinement process is wide enough to span across all minima, it is likely the global minimum will be found.</p>
+
+<hr />
+
+<p>(Built with <a href="https://www.mathjax.org/">MathJax</a> and a <a href="http://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/">helpful guide</a>)</p>
 
                 </section>
             </article>
