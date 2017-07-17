@@ -86,8 +86,14 @@ for $k$ iterations until sufficiently refined. Continue to follow the [proof](ht
 
 <div>$$ (\mathbf J^T \mathbf J) \mathbf\Delta \mathbf\beta = \mathbf J^T \mathbf\Delta \mathbf y $$</div>
 
-where $\mathbf J$ is the Jacobian.
+where $\mathbf J$ is the Jacobian. This is the [Gauss-Newton algorithm](https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm). Other methods exist for calculating nonlinear least squares:
 
+- QR Decomposition
+- Singular Value Decomposition
+- Gradient Descent Algorithm
+- Levenberg-Marquardt Algorithm
+
+<div></div>
 #### Least Squares Considerations
 
 The goal is to minimize the residuals by setting the gradient equal to 0 (finding the minimum of a curve along a dimension). However, for polynomials with degree 2 and higher or many other functions, multiple minima can exist. Loosely speaking, if the refinement process is wide enough to span across all minima, it is likely the global minimum will be found.
