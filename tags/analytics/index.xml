@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Analytics on rms1000watt</title>
-    <link>https://rms1000watt.github.io/tags/analytics/index.xml</link>
+    <link>https://rms1000watt.github.io/tags/analytics/</link>
     <description>Recent content in Analytics on rms1000watt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://rms1000watt.github.io/tags/analytics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Jul 2017 08:30:00 -0800</lastBuildDate>
+    
+	<atom:link href="https://rms1000watt.github.io/tags/analytics/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Analytics Cheat Sheet</title>
@@ -14,107 +17,12 @@
       <pubDate>Sat, 15 Jul 2017 08:30:00 -0800</pubDate>
       
       <guid>https://rms1000watt.github.io/post/remedial-analytics/</guid>
-      <description>
-
-&lt;h4 id=&#34;linear-vs-nonlinear&#34;&gt;Linear vs Nonlinear&lt;/h4&gt;
-
-&lt;p&gt;Linear if:&lt;/p&gt;
-
-&lt;p&gt;$$f(x + y) = f(x) + f(y)$$
-$$f(\alpha x) = \alpha f(x)$$&lt;/p&gt;
-
-&lt;h4 id=&#34;linear-algebra&#34;&gt;Linear Algebra&lt;/h4&gt;
-
-&lt;h5 id=&#34;dot-product&#34;&gt;Dot Product&lt;/h5&gt;
-
-&lt;div&gt;$$\vec{a}\cdot\vec{b} = a_{1}b_{1} + a_{2}b_{2} + ... = |\vec{a}||\vec{b}|\cos{\theta} $$&lt;/div&gt;
-
-&lt;h5 id=&#34;projection&#34;&gt;Projection&lt;/h5&gt;
-
-&lt;p&gt;The projection of $\vec{b}$ onto $\vec{a}$ is:&lt;/p&gt;
-
-&lt;div&gt;$$ proj_{\vec{a}}\vec{b} = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^2}\vec{a} $$&lt;/div&gt;
-
-&lt;h5 id=&#34;orthogonal-matrix&#34;&gt;Orthogonal Matrix&lt;/h5&gt;
-
-&lt;p&gt;A matrix $Q$ is orthogonal if:&lt;/p&gt;
-
-&lt;div&gt;$$Q^T Q = Q Q^T = I$$&lt;/div&gt;
-
-&lt;p&gt;Therefore, a matrix $Q$ is orthogonal if:&lt;/p&gt;
-
-&lt;div&gt;$$Q^T = Q^{-1}$$&lt;/div&gt;
-
-&lt;h5 id=&#34;jacobian&#34;&gt;Jacobian&lt;/h5&gt;
-
-&lt;div&gt;$$ \mathbf J_{ij} = \frac{\partial f_{i}}{\partial x_{j}} =  \begin{bmatrix} 
-\frac{\partial f_{1}}{\partial x} &amp; \frac{\partial f_{1}}{\partial y}  \\
-\frac{\partial f_{2}}{\partial x} &amp; \frac{\partial f_{2}}{\partial y} \\
-\end{bmatrix}$$&lt;/div&gt;
-
-&lt;h6 id=&#34;example&#34;&gt;Example&lt;/h6&gt;
-
-&lt;div&gt;$$ \mathbf f(x,y) = \begin{bmatrix} 
-x^2 y \\
-5x + \sin{y} \\
-\end{bmatrix}$$&lt;/div&gt;
-
-&lt;div&gt;$$
-\mathbf J  = \begin{bmatrix} 
-2xy &amp; x^2  \\
-5 &amp; \cos{y} \\
-\end{bmatrix}
-$$&lt;/div&gt;
-
-&lt;h4 id=&#34;linear-regression&#34;&gt;Linear Regression&lt;/h4&gt;
-
-&lt;p&gt;Can use Least Squares with &lt;a href=&#34;https://en.wikipedia.org/wiki/QR_decomposition&#34;&gt;QR Decomposition&lt;/a&gt;. As seen in &lt;a href=&#34;https://github.com/sajari/regression/blob/master/regression.go#L162-L176&#34;&gt;this project&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;nonlinear-regression&#34;&gt;Nonlinear Regression&lt;/h4&gt;
-
-&lt;p&gt;Can use Ordinary Least Squares (OLS) or Weighted Least Squares when observations are not equally reliable.&lt;/p&gt;
-
-&lt;h4 id=&#34;nonlinear-least-squares&#34;&gt;Nonlinear Least Squares&lt;/h4&gt;
-
-&lt;p&gt;Given a set of data points $(x_{1},y_{1}), (x_{2},y_{2}), &amp;hellip;, (x_{m},y_{m})  $ and a model function $f(x,\beta)$ that depends on $\beta = (\beta_{1}, \beta_{2}, &amp;hellip;, \beta_{n})$ with $m \ge n$ minimize the sum of squares (minimize residuals) $S$:&lt;/p&gt;
-
-&lt;div&gt;$$ S = \sum_{i=1}^m r_{i}^2$$&lt;/div&gt;
-
-&lt;p&gt;where $r$ is the residual&lt;/p&gt;
-
-&lt;div&gt;$$r_{i} = y_{i} - f(x_{i}, \beta_{j})$$&lt;/div&gt;
-
-&lt;p&gt;by finding the minimum of $S$ (by setting the gradient equal to 0)&lt;/p&gt;
-
-&lt;div&gt;$$ \frac{\partial S}{\partial \beta_{j}} = 2 \sum_{i} r_{i} \frac{\partial r_{i}}{\partial \beta_{j}} = 0 $$&lt;/div&gt; 
-
-&lt;p&gt;for $j = 1, 2, &amp;hellip; n$. Since this does not have an analytical solution, an initial value for $\beta$ must be chosen then iteratively refined:&lt;/p&gt;
-
-&lt;div&gt;$$ \beta_{j} \approx \beta_{j}^{k+1} = \beta_{j}^{k} + \Delta\beta_{j} $$&lt;/div&gt;
-
-&lt;p&gt;for $k$ iterations until sufficiently refined. Continue to follow the &lt;a href=&#34;https://en.wikipedia.org/wiki/Non-linear_least_squares&#34;&gt;proof&lt;/a&gt; and get a forumlation in matrix notation for nonlinear least squares:&lt;/p&gt;
-
-&lt;div&gt;$$ (\mathbf J^T \mathbf J) \mathbf\Delta \mathbf\beta = \mathbf J^T \mathbf\Delta \mathbf y $$&lt;/div&gt;
-
-&lt;p&gt;where $\mathbf J$ is the Jacobian. This is the &lt;a href=&#34;https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm&#34;&gt;Gauss-Newton algorithm&lt;/a&gt;. Other methods exist for calculating nonlinear least squares:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;QR Decomposition&lt;/li&gt;
-&lt;li&gt;Singular Value Decomposition&lt;/li&gt;
-&lt;li&gt;Gradient Descent Algorithm&lt;/li&gt;
-&lt;li&gt;Levenberg-Marquardt Algorithm&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;div&gt;&lt;/div&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;least-squares-considerations&#34;&gt;Least Squares Considerations&lt;/h4&gt;
-
-&lt;p&gt;The goal is to minimize the residuals by setting the gradient equal to 0 (finding the minimum of a curve along a dimension). However, for polynomials with degree 2 and higher or many other functions, multiple minima can exist. Loosely speaking, if the refinement process is wide enough to span across all minima, it is likely the global minimum will be found.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;(Built with &lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; and a &lt;a href=&#34;http://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/&#34;&gt;helpful guide&lt;/a&gt;)&lt;/p&gt;
-</description>
+      <description>Linear vs Nonlinear Linear if:
+$$f(x + y) = f(x) + f(y)$$ $$f(\alpha x) = \alpha f(x)$$
+Linear Algebra Dot Product $$\vec{a}\cdot\vec{b} = a_{1}b_{1} + a_{2}b_{2} + ... = |\vec{a}||\vec{b}|\cos{\theta} $$ Projection The projection of $\vec{b}$ onto $\vec{a}$ is:
+$$ proj_{\vec{a}}\vec{b} = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^2}\vec{a} $$ Orthogonal Matrix A matrix $Q$ is orthogonal if:
+$$Q^T Q = Q Q^T = I$$ Therefore, a matrix $Q$ is orthogonal if:
+$$Q^T = Q^{-1}$$ Jacobian $$ \mathbf J_{ij} = \frac{\partial f_{i}}{\partial x_{j}} = \begin{bmatrix} \frac{\partial f_{1}}{\partial x} &amp; \frac{\partial f_{1}}{\partial y} \\ \frac{\partial f_{2}}{\partial x} &amp; \frac{\partial f_{2}}{\partial y} \\ \end{bmatrix}$$ Example $$ \mathbf f(x,y) = \begin{bmatrix} x^2 y \\ 5x + \sin{y} \\ \end{bmatrix}$$ $$ \mathbf J = \begin{bmatrix} 2xy &amp; x^2 \\ 5 &amp; \cos{y} \\ \end{bmatrix} $$ Linear Regression Can use Least Squares with QR Decomposition.</description>
     </item>
     
   </channel>

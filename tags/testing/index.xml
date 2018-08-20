@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vs Code on rms1000watt</title>
-    <link>https://rms1000watt.github.io/tags/vs-code/</link>
-    <description>Recent content in Vs Code on rms1000watt</description>
+    <title>Testing on rms1000watt</title>
+    <link>https://rms1000watt.github.io/tags/testing/</link>
+    <description>Recent content in Testing on rms1000watt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 20 Aug 2018 07:32:00 -0700</lastBuildDate>
     
-	<atom:link href="https://rms1000watt.github.io/tags/vs-code/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rms1000watt.github.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,19 +19,6 @@
       <guid>https://rms1000watt.github.io/post/testing-your-go-app-get-started-the-easy-way/</guid>
       <description>TLDR: VS Code can generate the foundation for your table driven tests and git precommit hooks can enforce successful tests before reaching Github
 Gabriel Aszalos gave an excellent introductory blog post to testing in Golang; I recommend you read it: Your Introductory Course to Testing with Go. On top of this, I want to mention that your IDE can help you do some heavy lifting when writing tests, specifically, VS Code.</description>
-    </item>
-    
-    <item>
-      <title>Golang Env from Scratch</title>
-      <link>https://rms1000watt.github.io/post/golang-from-scratch/</link>
-      <pubDate>Fri, 10 Mar 2017 08:00:00 -0800</pubDate>
-      
-      <guid>https://rms1000watt.github.io/post/golang-from-scratch/</guid>
-      <description>This guide will help you install Golang and some useful developer tools in your fresh OS X instance. And there is a Hello World example at the end!
-Installations include:
- Homebrew Golang Zsh (with Oh My Zsh) Terminal.app Options Visual Studio Code (with plugins)  
-Installation Find and open the Terminal app in OS X. Run these commands.
-(The code blocks below will have comments in them which start with a # but you should be able to copy and paste the whole code block into the Terminal.</description>
     </item>
     
   </channel>

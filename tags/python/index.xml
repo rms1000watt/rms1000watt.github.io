@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on rms1000watt</title>
-    <link>https://rms1000watt.github.io/tags/python/index.xml</link>
+    <link>https://rms1000watt.github.io/tags/python/</link>
     <description>Recent content in Python on rms1000watt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://rms1000watt.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Jan 2017 07:11:58 -0800</lastBuildDate>
+    
+	<atom:link href="https://rms1000watt.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Awesome Everything</title>
@@ -14,211 +17,11 @@
       <pubDate>Sun, 22 Jan 2017 07:11:58 -0800</pubDate>
       
       <guid>https://rms1000watt.github.io/post/awesome-everything/</guid>
-      <description>
-
-&lt;h1 id=&#34;curated-list-of-everything-awesome&#34;&gt;Curated List of Everything Awesome&lt;/h1&gt;
-
-&lt;p&gt;This list is nowhere near exhaustive&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Golang&lt;/li&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;li&gt;C&lt;/li&gt;
-&lt;li&gt;C++&lt;/li&gt;
-&lt;li&gt;ReactJS&lt;/li&gt;
-&lt;li&gt;HTML&lt;/li&gt;
-&lt;li&gt;Serialization&lt;/li&gt;
-&lt;li&gt;AWS&lt;/li&gt;
-&lt;li&gt;Security&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
-
-&lt;h4 id=&#34;introduction&#34;&gt;Introduction&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/&#34;&gt;Go By Example&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://tour.golang.org/&#34;&gt;Tour of Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://dave.cheney.net/resources-for-new-go-programmers&#34;&gt;Dave Cheney&amp;rsquo;s Guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;tutorials&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.codeship.com/building-minimal-docker-containers-for-go-applications/&#34;&gt;Go with Docker from Scratch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;awesomego&#34;&gt;AwesomeGo&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://awesome-go.com/&#34;&gt;Awesome Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kardianos/govendor&#34;&gt;GoVendor&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
-
-&lt;h4 id=&#34;tutorials-1&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fabacademy.org/archives/2015/doc/WebSocketConsole.html&#34;&gt;Multiprocessing with Websockets&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;servers&#34;&gt;Servers&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.tornadoweb.org/en/stable/&#34;&gt;Tornado Web&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;c&#34;&gt;C&lt;/h2&gt;
-
-&lt;h4 id=&#34;servers-1&#34;&gt;Servers&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/lpereira/lwan&#34;&gt;Lwan&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;c-1&#34;&gt;C++&lt;/h2&gt;
-
-&lt;h4 id=&#34;tutorials-2&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://mrbook.org/blog/tutorials/make/&#34;&gt;Makefiles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;reactjs&#34;&gt;ReactJS&lt;/h2&gt;
-
-&lt;h4 id=&#34;tutorials-3&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://tutorials.pluralsight.com/interesting-apis/building-a-real-time-application-with-react-react-router-horizon-io-and-oauth&#34;&gt;React + Horizon.io (with OAuth example)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;html&#34;&gt;HTML&lt;/h2&gt;
-
-&lt;h4 id=&#34;templates&#34;&gt;Templates&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://html5up.net/&#34;&gt;HTML5 Up&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;generators&#34;&gt;Generators&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.mkdocs.org/&#34;&gt;MkDocs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://phenomic.io/&#34;&gt;Phenomic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;assets&#34;&gt;Assets&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://unsplash.com/&#34;&gt;Unsplash&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;css&#34;&gt;CSS&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://flexboxgrid.com/&#34;&gt;Flexbox grids&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://css-tricks.com/snippets/css/a-guide-to-flexbox/&#34;&gt;Flexbox&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;serialization&#34;&gt;Serialization&lt;/h2&gt;
-
-&lt;h4 id=&#34;yaml&#34;&gt;YAML&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.yaml.org/start.html&#34;&gt;http://www.yaml.org/start.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;protobuf&#34;&gt;Protobuf&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;https://developers.google.com/protocol-buffers/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;flatbuf&#34;&gt;Flatbuf&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://google.github.io/flatbuffers/&#34;&gt;https://google.github.io/flatbuffers/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;json&#34;&gt;JSON&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.json.org/&#34;&gt;http://www.json.org/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;aws&#34;&gt;AWS&lt;/h2&gt;
-
-&lt;h4 id=&#34;tutorials-4&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/awslabs/serverless-application-model/tree/master/examples&#34;&gt;SAM Examples&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;security&#34;&gt;Security&lt;/h2&gt;
-
-&lt;h4 id=&#34;blogs&#34;&gt;Blogs&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://samy.pl/&#34;&gt;Samy Kamkar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.codeandsec.com/&#34;&gt;codeandsec.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://thehackerblog.com/&#34;&gt;Mandatory Programmer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;hardware&#34;&gt;Hardware&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ecthros/pina-colada&#34;&gt;Piña Colada (WiFi Pinapple 4 RPI)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lanturtle.com/&#34;&gt;Lan Turtle&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://greatscottgadgets.com/hackrf/&#34;&gt;HackRF&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.nuand.com/&#34;&gt;BladeRF&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.wifipineapple.com/&#34;&gt;Wifi Pineapple&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;software&#34;&gt;Software&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://testssl.sh/&#34;&gt;TestSSL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/pirate/security-growler&#34;&gt;Security Growler&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.obdev.at/products/littlesnitch/index.html&#34;&gt;Little Snitch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://ettercap.github.io/ettercap/&#34;&gt;Ettercap (MitM)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/carlmjohnson/heffalump&#34;&gt;Heffalump (Honeypot)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getlantern.org/&#34;&gt;Lantern&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;services&#34;&gt;Services&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.privateinternetaccess.com&#34;&gt;VPN Private Internet Access&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;videos&#34;&gt;Videos&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=RsksLgmwNzA&#34;&gt;Defcon 21 - The Bluetooth Device Database&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=85uwy0ACJJw&#34;&gt;Defcon 22 - Grant Bugher - Detecting Bluetooth Surveillance Systems&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=00A36VABIA4&#34;&gt;Defcon 24 - Marc Newlin - MouseJack: Injecting Keystrokes into Wireless Mice&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Curated List of Everything Awesome This list is nowhere near exhaustive
+ Golang Python C C++ ReactJS HTML Serialization AWS Security  
+Golang Introduction  Go By Example Tour of Go Dave Cheney&amp;rsquo;s Guide  Tutorials  Go with Docker from Scratch  AwesomeGo  Awesome Go GoVendor  
+Python Tutorials  Multiprocessing with Websockets  Servers  Tornado Web  
+C Servers  Lwan</description>
     </item>
     
   </channel>

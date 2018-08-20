@@ -2,12 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on rms1000watt</title>
-    <link>https://rms1000watt.github.io/post/index.xml</link>
+    <link>https://rms1000watt.github.io/post/</link>
     <description>Recent content in Posts on rms1000watt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Jul 2017 08:30:00 -0800</lastBuildDate>
-    <atom:link href="https://rms1000watt.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Aug 2018 07:32:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://rms1000watt.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testing Your Go App: Get Started the Easy Way</title>
+      <link>https://rms1000watt.github.io/post/testing-your-go-app-get-started-the-easy-way/</link>
+      <pubDate>Mon, 20 Aug 2018 07:32:00 -0700</pubDate>
+      
+      <guid>https://rms1000watt.github.io/post/testing-your-go-app-get-started-the-easy-way/</guid>
+      <description>TLDR: VS Code can generate the foundation for your table driven tests and git precommit hooks can enforce successful tests before reaching Github
+Gabriel Aszalos gave an excellent introductory blog post to testing in Golang; I recommend you read it: Your Introductory Course to Testing with Go. On top of this, I want to mention that your IDE can help you do some heavy lifting when writing tests, specifically, VS Code.</description>
+    </item>
     
     <item>
       <title>Analytics Cheat Sheet</title>
@@ -15,107 +27,12 @@
       <pubDate>Sat, 15 Jul 2017 08:30:00 -0800</pubDate>
       
       <guid>https://rms1000watt.github.io/post/remedial-analytics/</guid>
-      <description>
-
-&lt;h4 id=&#34;linear-vs-nonlinear&#34;&gt;Linear vs Nonlinear&lt;/h4&gt;
-
-&lt;p&gt;Linear if:&lt;/p&gt;
-
-&lt;p&gt;$$f(x + y) = f(x) + f(y)$$
-$$f(\alpha x) = \alpha f(x)$$&lt;/p&gt;
-
-&lt;h4 id=&#34;linear-algebra&#34;&gt;Linear Algebra&lt;/h4&gt;
-
-&lt;h5 id=&#34;dot-product&#34;&gt;Dot Product&lt;/h5&gt;
-
-&lt;div&gt;$$\vec{a}\cdot\vec{b} = a_{1}b_{1} + a_{2}b_{2} + ... = |\vec{a}||\vec{b}|\cos{\theta} $$&lt;/div&gt;
-
-&lt;h5 id=&#34;projection&#34;&gt;Projection&lt;/h5&gt;
-
-&lt;p&gt;The projection of $\vec{b}$ onto $\vec{a}$ is:&lt;/p&gt;
-
-&lt;div&gt;$$ proj_{\vec{a}}\vec{b} = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^2}\vec{a} $$&lt;/div&gt;
-
-&lt;h5 id=&#34;orthogonal-matrix&#34;&gt;Orthogonal Matrix&lt;/h5&gt;
-
-&lt;p&gt;A matrix $Q$ is orthogonal if:&lt;/p&gt;
-
-&lt;div&gt;$$Q^T Q = Q Q^T = I$$&lt;/div&gt;
-
-&lt;p&gt;Therefore, a matrix $Q$ is orthogonal if:&lt;/p&gt;
-
-&lt;div&gt;$$Q^T = Q^{-1}$$&lt;/div&gt;
-
-&lt;h5 id=&#34;jacobian&#34;&gt;Jacobian&lt;/h5&gt;
-
-&lt;div&gt;$$ \mathbf J_{ij} = \frac{\partial f_{i}}{\partial x_{j}} =  \begin{bmatrix} 
-\frac{\partial f_{1}}{\partial x} &amp; \frac{\partial f_{1}}{\partial y}  \\
-\frac{\partial f_{2}}{\partial x} &amp; \frac{\partial f_{2}}{\partial y} \\
-\end{bmatrix}$$&lt;/div&gt;
-
-&lt;h6 id=&#34;example&#34;&gt;Example&lt;/h6&gt;
-
-&lt;div&gt;$$ \mathbf f(x,y) = \begin{bmatrix} 
-x^2 y \\
-5x + \sin{y} \\
-\end{bmatrix}$$&lt;/div&gt;
-
-&lt;div&gt;$$
-\mathbf J  = \begin{bmatrix} 
-2xy &amp; x^2  \\
-5 &amp; \cos{y} \\
-\end{bmatrix}
-$$&lt;/div&gt;
-
-&lt;h4 id=&#34;linear-regression&#34;&gt;Linear Regression&lt;/h4&gt;
-
-&lt;p&gt;Can use Least Squares with &lt;a href=&#34;https://en.wikipedia.org/wiki/QR_decomposition&#34;&gt;QR Decomposition&lt;/a&gt;. As seen in &lt;a href=&#34;https://github.com/sajari/regression/blob/master/regression.go#L162-L176&#34;&gt;this project&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;nonlinear-regression&#34;&gt;Nonlinear Regression&lt;/h4&gt;
-
-&lt;p&gt;Can use Ordinary Least Squares (OLS) or Weighted Least Squares when observations are not equally reliable.&lt;/p&gt;
-
-&lt;h4 id=&#34;nonlinear-least-squares&#34;&gt;Nonlinear Least Squares&lt;/h4&gt;
-
-&lt;p&gt;Given a set of data points $(x_{1},y_{1}), (x_{2},y_{2}), &amp;hellip;, (x_{m},y_{m})  $ and a model function $f(x,\beta)$ that depends on $\beta = (\beta_{1}, \beta_{2}, &amp;hellip;, \beta_{n})$ with $m \ge n$ minimize the sum of squares (minimize residuals) $S$:&lt;/p&gt;
-
-&lt;div&gt;$$ S = \sum_{i=1}^m r_{i}^2$$&lt;/div&gt;
-
-&lt;p&gt;where $r$ is the residual&lt;/p&gt;
-
-&lt;div&gt;$$r_{i} = y_{i} - f(x_{i}, \beta_{j})$$&lt;/div&gt;
-
-&lt;p&gt;by finding the minimum of $S$ (by setting the gradient equal to 0)&lt;/p&gt;
-
-&lt;div&gt;$$ \frac{\partial S}{\partial \beta_{j}} = 2 \sum_{i} r_{i} \frac{\partial r_{i}}{\partial \beta_{j}} = 0 $$&lt;/div&gt; 
-
-&lt;p&gt;for $j = 1, 2, &amp;hellip; n$. Since this does not have an analytical solution, an initial value for $\beta$ must be chosen then iteratively refined:&lt;/p&gt;
-
-&lt;div&gt;$$ \beta_{j} \approx \beta_{j}^{k+1} = \beta_{j}^{k} + \Delta\beta_{j} $$&lt;/div&gt;
-
-&lt;p&gt;for $k$ iterations until sufficiently refined. Continue to follow the &lt;a href=&#34;https://en.wikipedia.org/wiki/Non-linear_least_squares&#34;&gt;proof&lt;/a&gt; and get a forumlation in matrix notation for nonlinear least squares:&lt;/p&gt;
-
-&lt;div&gt;$$ (\mathbf J^T \mathbf J) \mathbf\Delta \mathbf\beta = \mathbf J^T \mathbf\Delta \mathbf y $$&lt;/div&gt;
-
-&lt;p&gt;where $\mathbf J$ is the Jacobian. This is the &lt;a href=&#34;https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm&#34;&gt;Gauss-Newton algorithm&lt;/a&gt;. Other methods exist for calculating nonlinear least squares:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;QR Decomposition&lt;/li&gt;
-&lt;li&gt;Singular Value Decomposition&lt;/li&gt;
-&lt;li&gt;Gradient Descent Algorithm&lt;/li&gt;
-&lt;li&gt;Levenberg-Marquardt Algorithm&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;div&gt;&lt;/div&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;least-squares-considerations&#34;&gt;Least Squares Considerations&lt;/h4&gt;
-
-&lt;p&gt;The goal is to minimize the residuals by setting the gradient equal to 0 (finding the minimum of a curve along a dimension). However, for polynomials with degree 2 and higher or many other functions, multiple minima can exist. Loosely speaking, if the refinement process is wide enough to span across all minima, it is likely the global minimum will be found.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;(Built with &lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt; and a &lt;a href=&#34;http://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/&#34;&gt;helpful guide&lt;/a&gt;)&lt;/p&gt;
-</description>
+      <description>Linear vs Nonlinear Linear if:
+$$f(x + y) = f(x) + f(y)$$ $$f(\alpha x) = \alpha f(x)$$
+Linear Algebra Dot Product $$\vec{a}\cdot\vec{b} = a_{1}b_{1} + a_{2}b_{2} + ... = |\vec{a}||\vec{b}|\cos{\theta} $$ Projection The projection of $\vec{b}$ onto $\vec{a}$ is:
+$$ proj_{\vec{a}}\vec{b} = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^2}\vec{a} $$ Orthogonal Matrix A matrix $Q$ is orthogonal if:
+$$Q^T Q = Q Q^T = I$$ Therefore, a matrix $Q$ is orthogonal if:
+$$Q^T = Q^{-1}$$ Jacobian $$ \mathbf J_{ij} = \frac{\partial f_{i}}{\partial x_{j}} = \begin{bmatrix} \frac{\partial f_{1}}{\partial x} &amp; \frac{\partial f_{1}}{\partial y} \\ \frac{\partial f_{2}}{\partial x} &amp; \frac{\partial f_{2}}{\partial y} \\ \end{bmatrix}$$ Example $$ \mathbf f(x,y) = \begin{bmatrix} x^2 y \\ 5x + \sin{y} \\ \end{bmatrix}$$ $$ \mathbf J = \begin{bmatrix} 2xy &amp; x^2 \\ 5 &amp; \cos{y} \\ \end{bmatrix} $$ Linear Regression Can use Least Squares with QR Decomposition.</description>
     </item>
     
     <item>
@@ -124,170 +41,11 @@ $$&lt;/div&gt;
       <pubDate>Fri, 10 Mar 2017 08:00:00 -0800</pubDate>
       
       <guid>https://rms1000watt.github.io/post/golang-from-scratch/</guid>
-      <description>
-
-&lt;p&gt;This guide will help you install Golang and some useful developer tools in your fresh OS X instance. And there is a Hello World example at the end!&lt;/p&gt;
-
-&lt;p&gt;Installations include:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Homebrew&lt;/li&gt;
-&lt;li&gt;Golang&lt;/li&gt;
-&lt;li&gt;Zsh (with Oh My Zsh)&lt;/li&gt;
-&lt;li&gt;Terminal.app Options&lt;/li&gt;
-&lt;li&gt;Visual Studio Code (with plugins)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;Find and open the Terminal app in OS X. Run these commands.&lt;/p&gt;
-
-&lt;p&gt;(The code blocks below will have comments in them which start with a &lt;code&gt;#&lt;/code&gt; but you should be able to copy and paste the whole code block into the Terminal.)&lt;/p&gt;
-
-&lt;h3 id=&#34;install-homebrew&#34;&gt;Install Homebrew&lt;/h3&gt;
-
-&lt;p&gt;Install &lt;a href=&#34;https://brew.sh/&#34;&gt;Homebrew&lt;/a&gt; and some useful packages with it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;
-
-# Install git (again?) so it has features like `gitk`
-brew install git
-
-# Install wget since it&#39;s a nice tool
-brew install wget
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;install-golang&#34;&gt;Install Golang&lt;/h3&gt;
-
-&lt;p&gt;This will install Golang and some necessary libraries for your Visual Studio Code environment to work. While the &lt;a href=&#34;https://golang.org/doc/install&#34;&gt;Golang installation steps&lt;/a&gt; are complete, they&amp;rsquo;re not obvious to newcomers. Here are explicit steps to actually have a working system.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Fetch the latest zipped Golang distro from their servers
-wget https://storage.googleapis.com/golang/go1.8.darwin-amd64.tar.gz 
-
-# Unzip the distro to `/usr/local/go`
-sudo tar -C /usr/local -xzf go1.8.darwin-amd64.tar.gz
-
-# Remove the latest zipped Golang distro from your system (the unzipped items will remain)
-rm go1.8.darwin-amd64.tar.gz
-
-# &#39;Symbolic Link&#39; the Golang binaries to a path your system can find them.
-# This lets you do things like executing `go run` in the terminal.
-ln -s /usr/local/go/bin/go /usr/local/bin/go
-ln -s /usr/local/go/bin/godoc /usr/local/bin/godoc
-ln -s /usr/local/go/bin/gofmt /usr/local/bin/gofmt
-
-# Make the default `GOPATH` directory which ends up at `/Users/ryan/go`
-mkdir ~/go
-
-# Install some golang libraries that will be needed later for Visual Studio Code
-go get -v github.com/rogpeppe/godef
-go get -v github.com/golang/lint/golint
-go get -v github.com/tpng/gopkgs
-go get -v github.com/lukehoban/go-outline
-go get -v github.com/nsf/gocode
-go get -v golang.org/x/tools/cmd/goimports
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;install-configure-zsh&#34;&gt;Install &amp;amp; Configure Zsh&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.zsh.org/&#34;&gt;Zsh&lt;/a&gt; is another shell program with cool features, plugins, and community.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Install zsh
-brew install zsh
-
-# Add `/usr/local/bin/zsh` at bottom of /etc/shells
-sudo echo &#39;/usr/local/bin/zsh&#39; &amp;gt;&amp;gt; /etc/shells 
-
-# Change shell to zsh in your system
-chsh -s /usr/local/bin/zsh
-
-# Install Oh My Zsh which will configure zsh for your system
-sh -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;configure-terminal&#34;&gt;Configure Terminal&lt;/h3&gt;
-
-&lt;p&gt;My only beef with default Terminal is the default theme. Here is how to change it.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update Terminal to use a dark theme&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Open a new Terminal and go to &lt;code&gt;Preferences&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Select the &lt;code&gt;Profiles&lt;/code&gt; tab&lt;/li&gt;
-&lt;li&gt;Select the &lt;code&gt;Pro&lt;/code&gt; theme on the left&lt;/li&gt;
-&lt;li&gt;Set as default&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;strong&gt;Fix background opacity and color&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;In the &lt;code&gt;Profiles&lt;/code&gt; tab in the &lt;code&gt;Text&lt;/code&gt; tab under the &lt;code&gt;Background&lt;/code&gt; section, click the black square next to &lt;code&gt;Color &amp;amp; Effects&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Adjust the opacity setting to 100%&lt;/li&gt;
-&lt;li&gt;Click the next tab with the sliders&lt;/li&gt;
-&lt;li&gt;In the dropdown that says &lt;code&gt;Gray Scale Slider&lt;/code&gt; select &lt;code&gt;RGB Sliders&lt;/code&gt; and set RGB to 30, 30, 30&lt;/li&gt;
-&lt;li&gt;Close this screen&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;strong&gt;Fix text boldness&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;In the &lt;code&gt;Profiles&lt;/code&gt; tab in the &lt;code&gt;Text&lt;/code&gt; tab under the &lt;code&gt;Text&lt;/code&gt; section, depress the &lt;code&gt;Use bold fonts&lt;/code&gt; setting&lt;/li&gt;
-&lt;li&gt;Exit Terminal completely&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;download-configure-visual-studio-code&#34;&gt;Download &amp;amp; Configure Visual Studio Code&lt;/h3&gt;
-
-&lt;p&gt;Download &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; (VS Code), open it, and drag that sucker to your &lt;code&gt;Applications&lt;/code&gt; directory. Open Visual Studio Code.&lt;/p&gt;
-
-&lt;p&gt;Press &lt;code&gt;cmd&lt;/code&gt; + &lt;code&gt;shift&lt;/code&gt; + &lt;code&gt;x&lt;/code&gt; to open the Extensions side menu (the bottommost icon on the left). Do a search for &lt;code&gt;go luke&lt;/code&gt;. The item at the top of the search results should be an extension named &lt;code&gt;Go&lt;/code&gt; authored by &lt;code&gt;lukehoban&lt;/code&gt;. Install that. Then you should be asked to restart VS Code; do it.&lt;/p&gt;
-
-&lt;p&gt;When VS Code restarts, press &lt;code&gt;cmd&lt;/code&gt; + &lt;code&gt;,&lt;/code&gt; to show the &lt;code&gt;settings.json&lt;/code&gt; files. Paste this JSON into the &amp;lsquo;User Settings&amp;rsquo; on the right of the screen.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// Place your settings in this file to overwrite the default settings
-{
-    &amp;quot;go.formatTool&amp;quot;: &amp;quot;goimports&amp;quot;,
-    &amp;quot;workbench.iconTheme&amp;quot;: null,
-    &amp;quot;terminal.integrated.shell.osx&amp;quot;: &amp;quot;/usr/local/bin/zsh&amp;quot;,
-    &amp;quot;workbench.welcome.enabled&amp;quot;: false
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You might have to restart VS Code after saving these changes. You can now view the Integrated Terminal with Zsh by pressing &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;(backtick)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;hello-world&#34;&gt;Hello World&lt;/h2&gt;
-
-&lt;p&gt;Open a new VS Code window. Open a new VS Code file. Paste this code into the window.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-)
-
-func main() {
-	fmt.Println(&amp;quot;hello world!&amp;quot;)
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Save this code to your Desktop and name it &lt;code&gt;main.go&lt;/code&gt;. Open your Integrated Terminal &lt;code&gt;ctrl&lt;/code&gt; + &lt;code&gt;(backtick)&lt;/code&gt;. In the Integrated Terminal, run these commands:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd ~/Desktop
-go run main.go
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You should see the output from your code above!&lt;/p&gt;
-
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-
-&lt;p&gt;Using these steps, you should now have your OS X environment setup to begin developing in Golang. I&amp;rsquo;ll add some screenshots soon. Please comment if certain steps are broken or just lame&amp;ndash;I can fix them as per your suggestions. Have fun coding!&lt;/p&gt;
-</description>
+      <description>This guide will help you install Golang and some useful developer tools in your fresh OS X instance. And there is a Hello World example at the end!
+Installations include:
+ Homebrew Golang Zsh (with Oh My Zsh) Terminal.app Options Visual Studio Code (with plugins)  
+Installation Find and open the Terminal app in OS X. Run these commands.
+(The code blocks below will have comments in them which start with a # but you should be able to copy and paste the whole code block into the Terminal.</description>
     </item>
     
     <item>
@@ -296,86 +54,10 @@ go run main.go
       <pubDate>Thu, 23 Feb 2017 07:11:58 -0800</pubDate>
       
       <guid>https://rms1000watt.github.io/post/what-is-grpc/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://grpc.io&#34;&gt;gRPC&lt;/a&gt; is Google&amp;rsquo;s &amp;ldquo;&amp;hellip;high performance, open-source universal RPC framework.&amp;rdquo; Which doesn&amp;rsquo;t really mean anything to the newcomer. To help you understand what this actually means, let&amp;rsquo;s look at what you&amp;rsquo;re already used to REST API and compare it gRPC.&lt;/p&gt;
-
-&lt;p&gt;What you&amp;rsquo;re used to&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;REST API = HTTP1.1 + REST + JSON
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;gRPC&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gRPC = Google + RPC Framework
-gRPC = Google + (HTTP2 + Remote Procedure Call + Protobuf)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Going further to explain the differences between the two&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;http2&#34;&gt;HTTP2&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP/2&#34;&gt;HTTP2&lt;/a&gt; is the next generation, WWW protocol following HTTP1.1. The big takeaway in relation to gRPC is the full duplex communication across a single connection, which is one reason why it&amp;rsquo;s coined &amp;ldquo;high performance.&amp;rdquo; Put another way, with 1 connection between server and client, data can be transferred in both directions concurrently.&lt;/p&gt;
-
-&lt;p&gt;Another cool side effect of HTTP2 is it requires a TLS connection. This doesn&amp;rsquo;t mean your connection is Always secure, it means IFF you provide a secure connection then you can use HTTP2. Please checkout the Wikipedia article for more information regarding HTTP2.&lt;/p&gt;
-
-&lt;h2 id=&#34;remote-procedure-call&#34;&gt;Remote Procedure Call&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Remote_procedure_call&#34;&gt;Remote Procedure Call&lt;/a&gt; or RPC is when &amp;ldquo;&amp;hellip;a computer program causes a procedure (subroutine) to execute in another address space (commonly on another computer on a shared network), which is coded as if it were a normal (local) procedure call, without the programmer explicitly coding the details for the remote interaction.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;WOW! Groundbreaking!&lt;/p&gt;
-
-&lt;p&gt;No, not really. You&amp;rsquo;re used to doing this with your REST API server/clients. You&amp;rsquo;re executing code on another computer without explicitly coding the commands on the remote computer. Put another way, you (the client) is telling a remote computer (the server) to do something; you don&amp;rsquo;t care how it gets done just as long as you get a proper response back. Don&amp;rsquo;t forget, you&amp;rsquo;re using Layer 7 HTTP to make the communication in both cases (REST &amp;amp; RPC).&lt;/p&gt;
-
-&lt;p&gt;But the difference between REST and RPC is essentially how you&amp;rsquo;re exposing your server&amp;rsquo;s endpoints. For example, a REST server might only provide strict CRUD operations against an object, while an RPC server could provide more general computation functionalities such as &lt;code&gt;genHash()&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;protobuf&#34;&gt;Protobuf&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;Protocol Buffers&lt;/a&gt; or Protobufs are one of Google&amp;rsquo;s serialization structures. If you&amp;rsquo;re comfortable with JSON or XML, then consider Protobufs in the same class as these. However, the magic power of Protobufs is the &lt;code&gt;.pb&lt;/code&gt; file. This file defines the structure (or dare I say schema) of your data. Then a Protobuf Compilier is used to actually generate the data structure in the language of your choosing. Therefore, you can define a data structure once and use it across all your languages.&lt;/p&gt;
-
-&lt;p&gt;Example Protobuf definition:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;message Person {
-  required string name = 1;
-  required int32 id = 2;
-  optional string email = 3;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;the-culmination-of-grpc&#34;&gt;The Culmination of gRPC&lt;/h2&gt;
-
-&lt;p&gt;gRPC takes this one step further by adding &lt;code&gt;Services&lt;/code&gt; to the Protobuf definition file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;service HelloService {
-  rpc SayHello (HelloRequest) returns (HelloResponse);
-}
-
-message HelloRequest {
-  string greeting = 1;
-}
-
-message HelloResponse {
-  string reply = 1;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;By using a gRPC plugin for the Protobuf Compilier, the compilier will also generate server/client code for any language of your chosing.&lt;/p&gt;
-
-&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-
-&lt;p&gt;If you&amp;rsquo;re used to REST APIs where HTTP1.1, REST, and JSON are used, consider gRPC as the next generation&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HTTP1.1 =&amp;gt; HTTP2&lt;/li&gt;
-&lt;li&gt;REST =&amp;gt; RPC&lt;/li&gt;
-&lt;li&gt;JSON =&amp;gt; Protobuf&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br&gt;
-But, I do hate to talk your ear off. You&amp;rsquo;ll learn a lot better by just playing with the actual tools. I can say I&amp;rsquo;ve used gRPC in the proper setting and it has lived up to the hype. So, go follow the &lt;a href=&#34;http://www.grpc.io/docs/quickstart/&#34;&gt;gRPC tutorials&lt;/a&gt; for your language of choice and get to playing!&lt;/p&gt;
-</description>
+      <description>TLDR: After you get past the learning curve of the topic (which is the bulk of this post), gRPC is an amazing framework!
+gRPC is Google&amp;rsquo;s &amp;ldquo;&amp;hellip;high performance, open-source universal RPC framework.&amp;rdquo; Which doesn&amp;rsquo;t really mean anything to the newcomer. To help you understand what this actually means, let&amp;rsquo;s look at what you&amp;rsquo;re already used to REST API and compare it gRPC.
+What you&amp;rsquo;re used to
+REST API = HTTP1.</description>
     </item>
     
     <item>
@@ -384,22 +66,9 @@ But, I do hate to talk your ear off. You&amp;rsquo;ll learn a lot better by just
       <pubDate>Wed, 22 Feb 2017 07:11:58 -0800</pubDate>
       
       <guid>https://rms1000watt.github.io/post/openssl-in-go/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Food for thought: What if you wanted to use Go AND meet compliance requirements?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Golang devs have specifically mentioned that some compliance requirements are not planned to be incorporated into the code base &lt;a href=&#34;https://groups.google.com/forum/#!topic/golang-nuts/xnjCdW8HaOE&#34;&gt;as seen here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;So, an open question to the community: can anyone provide a working implementation of OpenSSL in Go for server/client that works out of the box? For instance, is there a project where I could&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;go get -u -v your/openssl-go/project
-go run openssl-go-project.go
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;hellip; without a hitch?&lt;/p&gt;
-
-&lt;p&gt;Even using the exact steps defined at &lt;a href=&#34;https://godoc.org/github.com/spacemonkeygo/openssl&#34;&gt;SpaceMonkeyGo&lt;/a&gt; didn&amp;rsquo;t yield positive results.&lt;/p&gt;
-
-&lt;p&gt;Let me know what else is known!&lt;/p&gt;
-</description>
+      <description>Food for thought: What if you wanted to use Go AND meet compliance requirements?
+Golang devs have specifically mentioned that some compliance requirements are not planned to be incorporated into the code base as seen here.
+So, an open question to the community: can anyone provide a working implementation of OpenSSL in Go for server/client that works out of the box? For instance, is there a project where I could&amp;hellip;</description>
     </item>
     
     <item>
@@ -408,211 +77,11 @@ go run openssl-go-project.go
       <pubDate>Sun, 22 Jan 2017 07:11:58 -0800</pubDate>
       
       <guid>https://rms1000watt.github.io/post/awesome-everything/</guid>
-      <description>
-
-&lt;h1 id=&#34;curated-list-of-everything-awesome&#34;&gt;Curated List of Everything Awesome&lt;/h1&gt;
-
-&lt;p&gt;This list is nowhere near exhaustive&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Golang&lt;/li&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;li&gt;C&lt;/li&gt;
-&lt;li&gt;C++&lt;/li&gt;
-&lt;li&gt;ReactJS&lt;/li&gt;
-&lt;li&gt;HTML&lt;/li&gt;
-&lt;li&gt;Serialization&lt;/li&gt;
-&lt;li&gt;AWS&lt;/li&gt;
-&lt;li&gt;Security&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;golang&#34;&gt;Golang&lt;/h2&gt;
-
-&lt;h4 id=&#34;introduction&#34;&gt;Introduction&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gobyexample.com/&#34;&gt;Go By Example&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://tour.golang.org/&#34;&gt;Tour of Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://dave.cheney.net/resources-for-new-go-programmers&#34;&gt;Dave Cheney&amp;rsquo;s Guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;tutorials&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.codeship.com/building-minimal-docker-containers-for-go-applications/&#34;&gt;Go with Docker from Scratch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;awesomego&#34;&gt;AwesomeGo&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://awesome-go.com/&#34;&gt;Awesome Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kardianos/govendor&#34;&gt;GoVendor&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
-
-&lt;h4 id=&#34;tutorials-1&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://fabacademy.org/archives/2015/doc/WebSocketConsole.html&#34;&gt;Multiprocessing with Websockets&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;servers&#34;&gt;Servers&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.tornadoweb.org/en/stable/&#34;&gt;Tornado Web&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;c&#34;&gt;C&lt;/h2&gt;
-
-&lt;h4 id=&#34;servers-1&#34;&gt;Servers&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/lpereira/lwan&#34;&gt;Lwan&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;c-1&#34;&gt;C++&lt;/h2&gt;
-
-&lt;h4 id=&#34;tutorials-2&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://mrbook.org/blog/tutorials/make/&#34;&gt;Makefiles&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;reactjs&#34;&gt;ReactJS&lt;/h2&gt;
-
-&lt;h4 id=&#34;tutorials-3&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://tutorials.pluralsight.com/interesting-apis/building-a-real-time-application-with-react-react-router-horizon-io-and-oauth&#34;&gt;React + Horizon.io (with OAuth example)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;html&#34;&gt;HTML&lt;/h2&gt;
-
-&lt;h4 id=&#34;templates&#34;&gt;Templates&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://html5up.net/&#34;&gt;HTML5 Up&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;generators&#34;&gt;Generators&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.mkdocs.org/&#34;&gt;MkDocs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://phenomic.io/&#34;&gt;Phenomic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;assets&#34;&gt;Assets&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://unsplash.com/&#34;&gt;Unsplash&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;css&#34;&gt;CSS&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://flexboxgrid.com/&#34;&gt;Flexbox grids&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://css-tricks.com/snippets/css/a-guide-to-flexbox/&#34;&gt;Flexbox&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;serialization&#34;&gt;Serialization&lt;/h2&gt;
-
-&lt;h4 id=&#34;yaml&#34;&gt;YAML&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.yaml.org/start.html&#34;&gt;http://www.yaml.org/start.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;protobuf&#34;&gt;Protobuf&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;https://developers.google.com/protocol-buffers/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;flatbuf&#34;&gt;Flatbuf&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://google.github.io/flatbuffers/&#34;&gt;https://google.github.io/flatbuffers/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;json&#34;&gt;JSON&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.json.org/&#34;&gt;http://www.json.org/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;aws&#34;&gt;AWS&lt;/h2&gt;
-
-&lt;h4 id=&#34;tutorials-4&#34;&gt;Tutorials&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/awslabs/serverless-application-model/tree/master/examples&#34;&gt;SAM Examples&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;security&#34;&gt;Security&lt;/h2&gt;
-
-&lt;h4 id=&#34;blogs&#34;&gt;Blogs&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://samy.pl/&#34;&gt;Samy Kamkar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.codeandsec.com/&#34;&gt;codeandsec.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://thehackerblog.com/&#34;&gt;Mandatory Programmer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;hardware&#34;&gt;Hardware&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/ecthros/pina-colada&#34;&gt;Piña Colada (WiFi Pinapple 4 RPI)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lanturtle.com/&#34;&gt;Lan Turtle&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://greatscottgadgets.com/hackrf/&#34;&gt;HackRF&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.nuand.com/&#34;&gt;BladeRF&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.wifipineapple.com/&#34;&gt;Wifi Pineapple&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;software&#34;&gt;Software&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://testssl.sh/&#34;&gt;TestSSL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/pirate/security-growler&#34;&gt;Security Growler&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.obdev.at/products/littlesnitch/index.html&#34;&gt;Little Snitch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://ettercap.github.io/ettercap/&#34;&gt;Ettercap (MitM)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/carlmjohnson/heffalump&#34;&gt;Heffalump (Honeypot)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://getlantern.org/&#34;&gt;Lantern&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;services&#34;&gt;Services&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.privateinternetaccess.com&#34;&gt;VPN Private Internet Access&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;videos&#34;&gt;Videos&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=RsksLgmwNzA&#34;&gt;Defcon 21 - The Bluetooth Device Database&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=85uwy0ACJJw&#34;&gt;Defcon 22 - Grant Bugher - Detecting Bluetooth Surveillance Systems&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=00A36VABIA4&#34;&gt;Defcon 24 - Marc Newlin - MouseJack: Injecting Keystrokes into Wireless Mice&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Curated List of Everything Awesome This list is nowhere near exhaustive
+ Golang Python C C++ ReactJS HTML Serialization AWS Security  
+Golang Introduction  Go By Example Tour of Go Dave Cheney&amp;rsquo;s Guide  Tutorials  Go with Docker from Scratch  AwesomeGo  Awesome Go GoVendor  
+Python Tutorials  Multiprocessing with Websockets  Servers  Tornado Web  
+C Servers  Lwan</description>
     </item>
     
   </channel>

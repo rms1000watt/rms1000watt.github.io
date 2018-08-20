@@ -1,0 +1,313 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="rms1000watt">
+		<meta name="description" content="Mostly Software Engineering">
+		<meta name="generator" content="Hugo 0.31.1" />
+		<title>Testing Your Go App: Get Started the Easy Way &middot; rms1000watt</title>
+		<link rel="shortcut icon" href="https://rms1000watt.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://rms1000watt.github.io/css/style.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/atom-one-light.min.css">
+		
+
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+
+		
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {
+			inlineMath: [['$','$'], ['\\(','\\)']],
+			displayMath: [['$$','$$'], ['\[','\]']],
+			processEscapes: true,
+			processEnvironments: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			TeX: { equationNumbers: { autoNumber: "AMS" },
+				 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+		  }
+		});
+		</script>
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://rms1000watt.github.io/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='https://rms1000watt.github.io/post'>Archive</a>
+	
+
+	
+
+	
+		<a href='https://rms1000watt.github.io/about'>About</a>
+	
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        
+                            Testing Your Go App: Get Started the Easy Way
+                        
+                    </h1>
+                    <h2 class="headline">
+                    Aug 20, 2018 07:32
+                    · 763 words
+                    · 4 minutes read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://rms1000watt.github.io/tags/golang">Golang</a>
+                          
+                              <a href="https://rms1000watt.github.io/tags/testing">Testing</a>
+                          
+                              <a href="https://rms1000watt.github.io/tags/vs-code">VS Code</a>
+                          
+                              <a href="https://rms1000watt.github.io/tags/git">git</a>
+                          
+                              <a href="https://rms1000watt.github.io/tags/github">github</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p><strong>TLDR: VS Code can generate the foundation for your table driven tests and git precommit hooks can enforce successful tests before reaching Github</strong></p>
+
+<p><a href="https://www.toptal.com/resume/gabriel-aszalos">Gabriel Aszalos</a> gave an excellent introductory blog post to testing in Golang; I recommend you read it: <a href="https://www.toptal.com/go/your-introductory-course-to-testing-with-go">Your Introductory Course to Testing with Go</a>. On top of this, I want to mention that your IDE can help you do some heavy lifting when writing tests, specifically, VS Code.</p>
+
+<h2 id="vs-code">VS Code</h2>
+
+<p>VS Code (Visual Studio Code) has provided an execellent experience as a Golang developer. It&rsquo;s in the middle between light-weight Sublime and heavy-weight GoLand with all the features you need, without slowing down your machine.</p>
+
+<p>Also, huge shoutout to the original <code>lukehoban.Go</code> VS Code extention that got me hooked on VS Code a few years back. Since then, Microsoft started officially owning the Go extention, and VS Code has continued to grow, adding all sorts of awesome capabilities (some of which you&rsquo;ll see below).</p>
+
+<h2 id="code-and-tests">Code and Tests</h2>
+
+<p>If you&rsquo;re lucky and in a development environment that isn&rsquo;t extremely rushed, you ought to be following traditional TDD (Test Driven Development) where tests are written first, then your code is backfilled to satisfy the test cases. Also, along the way you&rsquo;d write unit tests for each function that isn&rsquo;t explicitly covered by the tests above for further test coverage.</p>
+
+<p>However, if you&rsquo;re in a rushed environment, tests sometimes get thrown to the wind&ndash;which is bad for many reasons (companies may see short-term growth in delivered software, but this incurs tech debt that will cost companies in the long run). To help cut down on accumulating tech debt in rushed environments, you can still write tests <em>quickly</em>. Said differently, let your IDE write tests for you.</p>
+
+<p>Let&rsquo;s say you have a <code>main.go</code> file that looks like:</p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+// Avg calculates the average of all integers
+func Avg(nos ...int) int {
+  sum := 0
+  for _, n := range nos {
+    sum += n
+  }
+  if sum == 0 {
+    return 0
+  }
+  return sum / len(nos)
+}
+
+func main() {
+  numbers := []int{1, 4, 5, 6}
+
+  fmt.Println(Avg(numbers...))
+}
+</code></pre>
+
+<p>To generate tests with VS Code, all you have to do is:</p>
+
+<ul>
+<li>Highlight a section of your <code>Avg</code> function</li>
+<li>Right click</li>
+<li>Select <code>Go: Generate Unit Tests for Function</code></li>
+</ul>
+
+<p><img src="http://localhost:1313/images/generate-tests.gif" alt="Generate Tests Gif" /></p>
+
+<p>Which will then create <code>main_test.go</code> with stubbed out table-driven-tests. All you have to do is go in and give it some use cases. This saves a ton of time since you don&rsquo;t have to write the boilerplate.</p>
+
+<h2 id="adding-use-cases">Adding Use Cases</h2>
+
+<p>Here is what the generated <code>main_test.go</code> file will look like:</p>
+
+<pre><code>package main
+
+import &quot;testing&quot;
+
+func TestAvg(t *testing.T) {
+  type args struct {
+    nos []int
+  }
+  tests := []struct {
+    name string
+    args args
+    want int
+  }{
+    // TODO: Add test cases.
+  }
+  for _, tt := range tests {
+    t.Run(tt.name, func(t *testing.T) {
+      if got := Avg(tt.args.nos...); got != tt.want {
+        t.Errorf(&quot;Avg() = %v, want %v&quot;, got, tt.want)
+      }
+    })
+  }
+}
+</code></pre>
+
+<p>Inside the <code>TODO: Add test cases.</code> section, add some test cases:</p>
+
+<pre><code>{
+  args: args{
+    nos: []int{2, 2},
+  },
+  want: 2,
+},
+{
+  args: args{
+    nos: []int{-1, 0, 1},
+  },
+  want: 0,
+},
+{
+  args: args{
+    nos: []int{-4, -4, -4, -4},
+  },
+  want: -4,
+},
+</code></pre>
+
+<p>From there, just run <code>go test</code> to test your code!</p>
+
+<h2 id="enforce-successful-tests-in-precommit">Enforce Successful Tests in Precommit</h2>
+
+<p>There are multiple points where tests can be enforced: precommit, premerge, predeploy, etc. Each have their own benefits and downfalls. However, the gateway-drug for test enforcement is at precommit time (it&rsquo;s just the most simple to setup and use).</p>
+
+<p>Create a file named <code>pre-commit</code> and add 1 line:</p>
+
+<pre><code>go test
+</code></pre>
+
+<p>Give this file the proper permissions then copy it to your .git/hooks directory:</p>
+
+<pre><code>chmod a+x pre-commit &amp;&amp; cp pre-commit .git/hooks/pre-commit
+</code></pre>
+
+<p>Now your <code>git commit</code> command will fail if the commands in your <code>pre-commit</code> fail (if <code>go test</code> fails).</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Tests are an important part of the development lifecycle for you as a developer and for the organization you&rsquo;re working with. Using a statically typed language as Go, there usually ends up being a lot more boilerplate that you have to deal with compared to Python or NodeJS. Since you don&rsquo;t want to be a code monkey writing repetative code, there are usually 2 ways to overcome the boilerplate: use libraries or generate code. In many cases, I prefer generating code, especially because it adheres to Rob Pike&rsquo;s Go Proverbs:</p>
+
+<p><a href="https://go-proverbs.github.io/">A little copying is better than a little dependency</a></p>
+
+<p>So, let your IDE do the heavy lifting; generate your table driven test foundation. 😊</p>
+
+<h2 id="reference-code">Reference Code</h2>
+
+<p>Code from this post is <a href="https://github.com/rms1000watt/demo-testing-your-go-app-get-started-the-easy-way">located in Github</a>.</p>
+
+                </section>
+            </article>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'rms1000watt'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="http://gist.github.com/rms1000watt">
+        <i class="fa fa-github-alt"></i>
+    </a>
+    
+    <a class="symbol" href="http://www.github.com/rms1000watt">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="http://www.linkedin.com/in/ryanmatthewsmith">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2018 <i class="fa fa-heart" aria-hidden="true"></i> rms1000watt
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="http://nodejh.com">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://rms1000watt.github.io/js/main.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-92611586-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+    </body>
+</html>

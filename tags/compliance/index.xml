@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compliance on rms1000watt</title>
-    <link>https://rms1000watt.github.io/tags/compliance/index.xml</link>
+    <link>https://rms1000watt.github.io/tags/compliance/</link>
     <description>Recent content in Compliance on rms1000watt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://rms1000watt.github.io/tags/compliance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Feb 2017 07:11:58 -0800</lastBuildDate>
+    
+	<atom:link href="https://rms1000watt.github.io/tags/compliance/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>OpenSSL in Go</title>
@@ -14,22 +17,9 @@
       <pubDate>Wed, 22 Feb 2017 07:11:58 -0800</pubDate>
       
       <guid>https://rms1000watt.github.io/post/openssl-in-go/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Food for thought: What if you wanted to use Go AND meet compliance requirements?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Golang devs have specifically mentioned that some compliance requirements are not planned to be incorporated into the code base &lt;a href=&#34;https://groups.google.com/forum/#!topic/golang-nuts/xnjCdW8HaOE&#34;&gt;as seen here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;So, an open question to the community: can anyone provide a working implementation of OpenSSL in Go for server/client that works out of the box? For instance, is there a project where I could&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;go get -u -v your/openssl-go/project
-go run openssl-go-project.go
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;hellip; without a hitch?&lt;/p&gt;
-
-&lt;p&gt;Even using the exact steps defined at &lt;a href=&#34;https://godoc.org/github.com/spacemonkeygo/openssl&#34;&gt;SpaceMonkeyGo&lt;/a&gt; didn&amp;rsquo;t yield positive results.&lt;/p&gt;
-
-&lt;p&gt;Let me know what else is known!&lt;/p&gt;
-</description>
+      <description>Food for thought: What if you wanted to use Go AND meet compliance requirements?
+Golang devs have specifically mentioned that some compliance requirements are not planned to be incorporated into the code base as seen here.
+So, an open question to the community: can anyone provide a working implementation of OpenSSL in Go for server/client that works out of the box? For instance, is there a project where I could&amp;hellip;</description>
     </item>
     
   </channel>
