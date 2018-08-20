@@ -51,7 +51,7 @@ To generate tests with VS Code, all you have to do is:
 - Right click
 - Select `Go: Generate Unit Tests for Function`
 
-![Generate Tests Gif](http://localhost:1313/images/generate-tests.gif)
+![Generate Tests Gif](../../images/generate-tests.gif)
 
 Which will then create `main_test.go` with stubbed out table-driven-tests. All you have to do is go in and give it some use cases. This saves a ton of time since you don't have to write the boilerplate.
 
